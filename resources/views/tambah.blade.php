@@ -155,7 +155,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Kondisi_das</td>
+                    <td>Kondisi Daerah Aliran Sungai</td>
                     <td>
                         <select name="kondisi_das" value="{{ old('kondisi_das') }}">
                             <option value="" selected>--Pilih Kondisi--</option>
@@ -173,6 +173,7 @@
                             <option value="" selected>--Pilih Kondisi--</option>
                             <option value="Layak">Layak</option>
                             <option value="Tidak Layak">Tidak Layak</option>
+                            <option value="Tidak Layak">Tidak ada bangunan</option>
                         </select>
                         <br>
                         <small class="text-danger">{{ $errors->first('kondisi_bangunan') }}</small>

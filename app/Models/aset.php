@@ -5,22 +5,23 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class tb_aset extends Model
+class aset extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        // 'title', 'content'
+        // 'name', 'kelas' ,
             'no_sertifikat',
+            'nama_aset',
             'alamat_aset',
             'luas_aset',
             'status_aset',
-            'kondisi_das',
+            'kondisi_aset',
             'kondisi_geografis',
             'asalusul_aset',
-            'th_kepemilikam',
+            'th_kepemilikan',
             'th_pembangunan',
             'th_rehab',
-            'keterangan'
+            'keterangan_aset'
     ];
 }

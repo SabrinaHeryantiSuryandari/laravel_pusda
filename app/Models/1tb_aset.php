@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class tb_aset extends Model
 {
     use HasFactory;
-
+    
     protected $fillable = [
         // 'title', 'content'
             'no_sertifikat',

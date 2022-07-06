@@ -22,11 +22,11 @@ Route::get('/', function () {
 Route::get('/admin', function () {
     return view('admin');
 });
+Route::get('/create', function () {
+    return view('create');
+});
 Route::get('/tambah', function () {
     return view('tambah');
-});
-Route::get('/laporan', function () {
-    return view('laporan');
 });
 Route::get('/pengguna', function () {
     return view('pengguna');
@@ -41,6 +41,9 @@ Route::get('/masuk',[view::class, 'login']);
 
 //route resource
 // Route::get('/post', 'PostController@index');
-Route::match(['get', 'post'],'/tambah',[App\Http\Controllers\PostController::class, "tambah" ]);
+// Route::match(['get', 'post'],'/tambah',[App\Http\Controllers\TbAsetController::class, "tambah" ]);
 // Route::get('/tambah',[ PostController::class, "tambah" ]);
 // Route::post('/tambah',[ PostController::class, "tambah" ]);
+
+//tambahkan kode berikut
+Route::resource('asets', App\Http\Controllers\AsetController::class);

@@ -24,7 +24,7 @@
     <!-- Custom styles for this page -->
     <link href="{{ asset('template/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
 
-    <link
+    {{-- <link
 rel="stylesheet"
 href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
 integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
@@ -32,8 +32,12 @@ crossorigin="anonymous">
 <link
 rel="stylesheet"
 type="text/css"
-href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
+href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"> --}}
 
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </head>
 
@@ -69,7 +73,7 @@ href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
                 
                 <!-- Nav Item - Pages Collapse Menu -->
                 <li class="nav-item collapsed active">
-                    <a class="nav-link text-dark" href="/tambah">
+                    <a class="nav-link text-dark" href="/create">
                         {{-- <i class="fas fa-fw fa-cog"></i> --}}
                         <i class="fa-solid fa-chart-pie"></i>
                         <span>Input Data</span>
@@ -78,7 +82,7 @@ href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
 
                 <!-- Nav Item - Utilities Collapse Menu -->
                 <li class="nav-item active">
-                    <a class="nav-link collapsed text-dark" href="/laporan">
+                    <a class="nav-link collapsed text-dark" href="/asets">
                         {{-- <i class="fas fa-fw fa-wrench"></i> --}}
                         <i class="fas fa-clipboard-list"></i>
                         <span>Laporan Data</span>
@@ -205,6 +209,7 @@ href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
                             class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
                         </div>
                         
+                        {{-- isi --}}
                         @yield('content')
                         
                     </div>
