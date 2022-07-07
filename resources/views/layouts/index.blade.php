@@ -55,29 +55,39 @@ href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"> --}
             </a>
             
             <!-- Divider -->
-            <hr class="sidebar-divider my-0">
+            <hr class="sidebar-divider my-0" style="background-color: #53c6c3;">
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link text-dark" href="/admin">
+                <a class="nav-link text-dark" href="/home">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
                 </li>
                 
                 <!-- Divider -->
-                <hr class="sidebar-divider">
+                <hr class="sidebar-divider" style="background-color: #53c6c3;">
                 
                 <!-- Heading -->
-                <div class="sidebar-heading text-dark">
+                <div class="sidebar-heading text-gray-50 ">
                     Data Aset Tanah
                 </div>
                 
                 <!-- Nav Item - Pages Collapse Menu -->
-                <li class="nav-item collapsed active">
-                    <a class="nav-link text-dark" href="/create">
+                <li class="nav-item @yield('input-data')">
+                    {{-- <a class="nav-link text-dark" href="/create"> --}}
+                    <a class="nav-link text-dark @yield('input-data-collapse')" data-toggle="collapse" href="" data-target="#collapseTwo" aria-expanded="true"
+                    aria-controls="collapseTwo">
                         {{-- <i class="fas fa-fw fa-cog"></i> --}}
                         <i class="fa-solid fa-chart-pie"></i>
                         <span>Input Data</span>
                     </a>
+                    <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Custom Components:</h6>
+                        <a class="collapse-item @yield('input-sudah')" href="{{ url('/create') }}">Tersertifikasi</a>
+                        <a class="collapse-item @yield('input-belum')" href="{{ url('/belum-create') }}">Belum Tersertifikasi</a>
+                    </div>
+                </div>
                 </li>
 
                 <!-- Nav Item - Utilities Collapse Menu -->
@@ -90,10 +100,10 @@ href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"> --}
                 </li>
                 
                 <!-- Divider -->
-                <hr class="sidebar-divider">
+                <hr class="sidebar-divider" style="background-color: #53c6c3;">
                 
                 <!-- Heading -->
-                <div class="sidebar-heading text-dark">
+                <div class="sidebar-heading text-gray-50">
                     Pengaturan
                 </div>
                 
@@ -106,11 +116,11 @@ href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"> --}
                 </li>
                 
                 <!-- Divider -->
-                <hr class="sidebar-divider d-none d-md-block">
+                <hr class="sidebar-divider" style="background-color: #53c6c3;">
                 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                <button class="rounded-circle border-0" id="sidebarToggle" style="background-color: #52a4a1;"></button>
             </div>
             
             <!-- Sidebar Message -->
@@ -162,7 +172,7 @@ href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"> --}
                     <!-- Topbar search -->
                     
                     <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    {{-- <ul class="navbar-nav ml-auto">
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
@@ -186,7 +196,7 @@ href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"> --}
                                     <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Activity Log
                                 </a> --}}
-                                <div class="dropdown-divider"></div>
+                                {{-- <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
@@ -194,6 +204,44 @@ href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"> --}
                             </div>
                         </li>
                         
+                    </ul>  --}}
+
+                    <ul class="navbar-nav ms-auto">
+                        <!-- Authentication Links -->
+                        @guest
+                            @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                            @endif
+
+                            {{-- @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif --}}
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <span class="mr-2 d-none d-lg-inline text-white small">{{ Auth::user()->name }}</span>
+                                    
+                                    <img class="img-profile rounded-circle"
+                            src="{{ asset('template/img/undraw_profile.svg')}}">
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
                     </ul>
                     
                 </nav>

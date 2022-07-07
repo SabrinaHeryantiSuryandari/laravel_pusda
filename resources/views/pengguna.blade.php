@@ -20,7 +20,7 @@
                         <div class="h3 font-weight-bold text-primary text-uppercase mb-0"> ADMIN </div>
                         {{-- <div class="h5 mb-0 font-weight-bold text-gray-800">Total Aset Belum Terdaftar</div> --}}
                     </div>
-                    <div>
+                    <div class="border-0 col-auto mr-5">
                         <a href=""><i class="fa-solid fa-pen-to-square fa-2x">edit</i></a><br>
                         <a href=""><i class="fa-solid fa-trash-can fa-2x">delete</i></a>
                     </div>
@@ -35,6 +35,14 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class=" col-auto mr-2 mx-auto">
+                             {{-- @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">
+                                       
+                                        <i class="fa-solid fa-plus fa-3x"> {{ __('Register') }}</i>
+                                    </a>
+                                </li>
+                            @endif --}}
                             <a href=""><i class="fa-solid fa-plus fa-3x"></i></a>
                         </div>
                     </div>

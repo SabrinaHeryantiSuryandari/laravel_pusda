@@ -1,16 +1,16 @@
-@extends('layouts/index')
+@extends('layouts/master')
 @section('content')
-    @section('judul')
+    {{-- @section('judul')
         {{'Pengguna'}}
     @endsection
     @section('title')
         {{'Pengguna'}}
-    @endsection
+    @endsection --}}
 
 <!-- Content Row -->
 <div class="row">
 
-    <div class="container mt-5">
+    {{-- <div class="container mt-5">
         <div class="row">
             <div class="col-md-12">
                 <div class="card border-0 shadow rounded">
@@ -54,7 +54,8 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
+    
     
 </div>
 @endsection

@@ -1,4 +1,7 @@
 @extends('layouts/index')
+@section('input-data', 'active')
+@section('input-data-collapse', 'collapsed')
+@section('input-sudah', 'active')
 @section('content')
     @section('judul')
         {{'Input Data'}}

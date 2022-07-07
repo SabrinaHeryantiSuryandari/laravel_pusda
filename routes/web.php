@@ -20,17 +20,28 @@ Route::get('/', function () {
 });
 
 Route::get('/admin', function () {
-    return view('admin');
+    return view('index.admin');
 });
+
+// CRUD
+// route untuk input data yg telah terverifikasi
+Route::get('/verified-create', function () {
+    return view('create');
+});
+
+// route untuk input data yg belum terverifikasi
 Route::get('/create', function () {
     return view('create');
 });
-Route::get('/tambah', function () {
-    return view('tambah');
-});
+// Route::get('/tambah', function () {
+//     return view('tambah');
+// });
 Route::get('/pengguna', function () {
     return view('pengguna');
 });
+// Route::get('/tamu', function () {
+//     return view('tamu');
+// });
 
 Auth::routes();
 Auth::routes(['verify' => false]);
@@ -39,6 +50,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/admin',[view::class, 'index']);
 Route::get('/masuk',[view::class, 'login']);
 
+Route::get('/guest',[App\Http\Controllers\GuestController::class, 'index'])->name('guest');
+Route::get('/tamu',[view::class, 'index']);
+// Route::get('/masuk',[view::class, 'tamu']);
 //route resource
 // Route::get('/post', 'PostController@index');
 // Route::match(['get', 'post'],'/tambah',[App\Http\Controllers\TbAsetController::class, "tambah" ]);

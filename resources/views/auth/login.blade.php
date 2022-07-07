@@ -100,22 +100,21 @@
     <div class="container col-lg-6">
 
         <!-- Outer Row -->
+        
         <div class="row justify-content-center card-body">
-            {{-- <div class="col-xl-10 col-lg-12 col-md-9"> --}}
+            
 
                 <div class="card o-hidden border-0 shadow-lg my-5">
-                    {{-- <div class="card-body p-0"> --}}
-                        <!-- Nested Row within Card Body -->
-                        {{-- <div class="row"> --}}
-                            {{-- <div class="col-lg-6 d-none d-lg-block bg-login-image"></div> --}}
-                            {{-- <div class="col-lg-6"> --}}
+                   
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">{{ __('Login') }}</h1>
+                                        {{-- <h1 class="h4 text-gray-900 mb-4">{{ __('Login') }}</h1> --}}
                                         {{-- <div class="card-header">{{ __('Login') }}</div> --}}
-                                    </div>
+                                        <img src="img/logo.png" alt="logo" width="140px" height="52px">
+                                    </div><br>
                                     {{-- <form class="user"> --}}
-                                    <form method="POST" action="{{ route('login') }}">
+                                    <form method="POST" action="{{ route('login') }}" >
+                                        
                                         @csrf
                                         <div class="form-group">
                                             <label for="email" class="col-form-label text-md-end">{{ __('Email') }}</label>
@@ -147,7 +146,7 @@
                                         {{-- <a href="" class="btn btn-primary btn-user btn-block">
                                             {{ __('Login') }}
                                         </a> --}}
-                                        <button type="submit" class="btn btn-primary">
+                                        <button type="submit" class="btn btn-primary text-center" >
                                             {{ __('Login') }}
                                         </button>
                                         @if (Route::has('password.request'))
@@ -156,7 +155,13 @@
                                             </a>
                                         @endif                                        
                                     </form>
-                                </div>
+                                    <hr>
+                                    {{-- <button type="submit" class="btn btn-primary">
+                                        {{ route('tamu') }}
+                                    </button> --}}
+                                    <div class="text-center">
+                                    <a class="btn btn-primary text-center" href="{{ route('guest') }}"> LOGIN AS GUEST </a>
+                                </div></div>
                             {{-- </div> --}}
                         {{-- </div> --}}
                     {{-- </div> --}}
