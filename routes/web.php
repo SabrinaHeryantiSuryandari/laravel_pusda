@@ -33,11 +33,11 @@ Route::get('/verified-create', function () {
 Route::get('/create', function () {
     return view('create');
 });
-// Route::get('/tambah', function () {
-//     return view('tambah');
-// });
+Route::get('/laporan', function () {
+    return view('admin.laporan');
+});
 Route::get('/pengguna', function () {
-    return view('pengguna');
+    return view('admin.pengguna');
 });
 // Route::get('/tamu', function () {
 //     return view('tamu');

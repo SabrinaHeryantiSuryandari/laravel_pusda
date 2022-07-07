@@ -16,7 +16,7 @@ class AsetController extends Controller
     {
         $asets = Aset::latest()->paginate(5);
       
-        return view('laporan',compact('asets'))
+        return view('admin.laporan',compact('asets'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     
     }
@@ -28,7 +28,7 @@ class AsetController extends Controller
      */
     public function create()
     {
-        return view('create');
+        return view('admin.create');
     }
 
     /**
@@ -68,7 +68,7 @@ class AsetController extends Controller
      */
     public function show(Aset $aset)
     {
-        return view('show',compact('aset'));
+        return view('admin.show',compact('aset'));
     }
 
     /**
@@ -79,7 +79,7 @@ class AsetController extends Controller
      */
     public function edit(Aset $aset)
     {
-        return view('edit',compact('aset'));
+        return view('admin.edit',compact('aset'));
     }
 
     /**
