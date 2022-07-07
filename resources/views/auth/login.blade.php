@@ -161,7 +161,15 @@
                                     </button> --}}
                                     <div class="text-center">
                                     <a class="btn btn-primary text-center" href="{{ route('guest') }}"> LOGIN AS GUEST </a>
-                                </div></div>
+                                </div>
+                            {{-- @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">
+                                       
+                                        <i class="fa-solid fa-plus fa-3x"> {{ __('Register') }}</i>
+                                    </a>
+                                </li>
+                            @endif --}}</div>
                             {{-- </div> --}}
                         {{-- </div> --}}
                     {{-- </div> --}}
