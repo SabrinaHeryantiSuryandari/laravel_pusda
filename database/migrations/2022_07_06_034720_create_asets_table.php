@@ -16,17 +16,17 @@ return new class extends Migration
         Schema::create('asets', function (Blueprint $table) {
             $table->id();
             $table->string('no_sertifikat');
+            $table->string('nama_aset');
             $table->string('alamat_aset');
             $table->string('luas_aset');
             $table->string('status_aset');
-            $table->string('kondisi_das');
-            $table->string('kondisi_bangunan');
+            $table->string('kondisi_aset');
             $table->string('kondisi_geografis');
             $table->string('asalusul_aset');
             $table->string('th_kepemilikam');
             $table->string('th_pembangunan');
             $table->string('th_rehab');
-            $table->string('keterangan');
+            $table->string('keterangan_aset');
             $table->timestamps();
         });
     }
