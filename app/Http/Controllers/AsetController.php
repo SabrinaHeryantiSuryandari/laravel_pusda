@@ -123,7 +123,7 @@ class AsetController extends Controller
     {
         $aset->delete();
        
-        return redirect()->route('laporan')
+        return redirect()->route('asets.index')
                         ->with('success','Aset deleted successfully');
     
     }

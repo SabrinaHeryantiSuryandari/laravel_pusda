@@ -33,12 +33,12 @@ Route::get('/verified-create', function () {
 Route::get('/create', function () {
     return view('create');
 });
-Route::get('/laporan', function () {
-    return view('admin.laporan');
-});
-Route::get('/pengguna', function () {
-    return view('admin.pengguna');
-});
+// Route::get('/laporan', function () {
+//     return view('admin.laporan');
+// });
+// Route::get('/pengguna', function () {
+//     return view('admin.pengguna');
+// });
 // Route::get('/tamu', function () {
 //     return view('tamu');
 // });
@@ -61,3 +61,9 @@ Route::get('/tamu',[view::class, 'index']);
 
 //tambahkan kode berikut
 Route::resource('asets', App\Http\Controllers\AsetController::class);
+
+
+// Route::match(['get', 'post'],'user', [App\Http\Controllers\UserController::class, "pengguna"]);
+
+// Route::get('/user', 'PostController@admin.pengguna');
+Route::get('user',App\Http\Controllers\UserController::class);

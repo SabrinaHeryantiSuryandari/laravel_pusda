@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -39,6 +39,12 @@ href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"> --}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
+
+
+            {{-- import file bootstrap  --}}
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+                integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        
 </head>
 
 <body id="page-top">
@@ -72,13 +78,13 @@ href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"> --}
                 </div>
                 
                 <!-- Nav Item - Pages Collapse Menu -->
-                {{-- <li class="nav-item @yield('input-data')"> --}}
-                {{-- <li class="nav-item collapsed"> --}}
+                <li class="nav-item @yield('input-data')">
+                <li class="nav-item collapsed">
                     {{-- <a class="nav-link text-dark" href="/create"> --}}
                     {{-- <a class="nav-link text-dark @yield('input-data-collapse')" href="" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"> --}}
-                    {{-- <a class="nav-link text-dark" href="" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"> --}}
+                    <a class="nav-link text-dark" href="" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                         {{-- <i class="fas fa-fw fa-cog"></i> --}}
-                        {{-- <i class="fa-solid fa-chart-pie"></i>
+                        <i class="fa-solid fa-chart-pie"></i>
                         <span>Input Data</span>
                     </a>
                     <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo"
@@ -89,8 +95,8 @@ href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"> --}
                             <a class="collapse-item @yield('input-belum')" href="{{ url('/belum-create') }}">Belum Tersertifikasi</a>
                         </div>
                     </div>
-                </li> --}}
-                <li class="nav-item">
+                </li>
+                {{-- <li class="nav-item">
                     <a class="nav-link collapsed text-dark" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
                         aria-controls="collapseTwo">
                         <i class="fas fa-fw fa-cog"></i>
@@ -104,7 +110,7 @@ href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"> --}
                             <a class="collapse-item active" href="{{ url('/belum-create') }}">Belum Tersertifikasi</a>
                         </div>
                     </div>
-                </li>
+                </li> --}}
 
                 <!-- Nav Item - Utilities Collapse Menu -->
                 <li class="nav-item active">

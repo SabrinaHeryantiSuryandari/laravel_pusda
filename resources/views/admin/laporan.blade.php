@@ -65,18 +65,22 @@
                         <td>{{ $aset->th_kepemilikam }}</td>
                         <td>{{ $aset->th_pembangunan }}</td>
                         <td>{{ $aset->th_rehab }}</td> --}}
-                        <td>{{ $aset->keterangan }}</td>
+                        <td>{{ $aset->keterangan_aset }}</td>
                         <td>
                             <form action="{{ route('asets.destroy',$aset->id) }}" method="POST">
-            
-                                <a class="btn btn-info" href="{{ route('asets.show',$aset->id) }}">Detail</a>
+                                {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                   {{-- detail --}}
+                                   {{-- <a href="{{ route('asets.show',$aset->id) }}" >Detail</a>
+                                </button>  --}}
+                                  
+                                <a class="btn btn-primary" href="{{ route('asets.show',$aset->id) }}" >Detail</a>
                 
                                 <a class="btn btn-primary" href="{{ route('asets.edit',$aset->id) }}">Edit</a>
             
                                 @csrf
                                 @method('DELETE')
                 
-                                <button type="submit" class="btn btn-danger" href="asets">Delete</button>
+                                <button type="submit" class="btn btn-danger">Delete</button>
                             </form>
                         </td>
                     </tr>
