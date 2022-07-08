@@ -61,9 +61,10 @@ Route::get('/tamu',[view::class, 'index']);
 
 //tambahkan kode berikut
 Route::resource('asets', App\Http\Controllers\AsetController::class);
+Route::resource('user', App\Http\Controllers\UserController::class);
 
 
 // Route::match(['get', 'post'],'user', [App\Http\Controllers\UserController::class, "pengguna"]);
 
 // Route::get('/user', 'PostController@admin.pengguna');
-Route::get('user',App\Http\Controllers\UserController::class);
+// Route::get('user',App\Http\Controllers\UserController::class);

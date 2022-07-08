@@ -1,7 +1,7 @@
 @extends('index/tamu')
 {{-- @section('content')
     @section('title')
-        {{'halaman admin'}}
+        {{'Beranda'}}
     @endsection
     @section('judul')
         {{'Dashboard'}}

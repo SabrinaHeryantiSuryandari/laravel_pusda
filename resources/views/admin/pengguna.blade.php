@@ -79,16 +79,17 @@
             <a href=""><i class="fa-solid fa-trash-can fa-2x">delete</i></a>
         </div>
     </div> --}}
-    div class="row mt-5">
+    
+    <div class="row mt-5">
     <div class="col-lg-12 margin-tb">
         <div class="float-start">
             <h2>Laravel 9 CRUD School Application</h2>
         </div>
-        {{-- <div class="float-end">
-            <a class="btn btn-success" href="{{ route('items.create') }}"> Create New item</a>
-        </div> --}}
+        <div class="float-end">
+            {{-- <a class="btn btn-success" href="{{ route('items.create') }}"> Create New item</a> --}}
+        </div>
     </div>
-</div>
+</div> 
 
 @if ($message = Session::get('success'))
     <div class="alert alert-success">
@@ -97,23 +98,25 @@
 @endif
 
 <table class="table table-bordered">
-    <tr>
+    {{-- <tr>
         <th>No</th>
         <th>Name</th>
         <th>Kelas</th>
         <th width="280px">Action</th>
-    </tr>
-    @foreach ($users as $item)
-    <tr>
+    </tr> --}}
+    <div class="col-12">
+        <div class="row">
+    @foreach ($users as $user)
+    {{-- <tr>
         <td>{{ ++$i }}</td>
-        <td>{{ $item->name }}</td>
-        <td>{{ $item->kelas }}</td>
+        <td>{{ $user->name }}</td>
+        <td>{{ $user->email }}</td>
         <td>
-            <form action="{{ route('users.destroy',$item->id) }}" method="POST">
+            <form action="{{ route('user.destroy',$user->id) }}" method="POST">
 
-                <a class="btn btn-info" href="{{ route('users.show',$item->id) }}">Show</a>
+                <a class="btn btn-info" href="{{ route('user.show',$user->id) }}">Show</a>
 
-                <a class="btn btn-primary" href="{{ route('users.edit',$item->id) }}">Edit</a>
+                <a class="btn btn-primary" href="{{ route('user.edit',$user->id) }}">Edit</a>
 
                 @csrf
                 @method('DELETE')
@@ -121,13 +124,52 @@
                 <button type="submit" class="btn btn-danger">Delete</button>
             </form>
         </td>
-    </tr>
+    </tr> --}}
+    <div class="col-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ $user->title }}</h5>
+                <p class="card-text">{{ substr($user->content, 0, 100) }}</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        <br>
+    </div>
     @endforeach
+        </div></div>
 </table>
 <div class="row text-center">
     {!! $user->links() !!}
 </div>
 
+<br>
+{{-- <div class="container">
+    <nav class="navbar navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">     
+                 <b> LaraPost</b>
+            </a>
+        </div>
+    </nav>
+    <br>
+    <div class="col-12">
+        <div class="row">
+            @foreach ($user as $item)
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $item->name }}</h5>
+                        <p class="card-text">{{ substr($item->email, 0, 100) }}</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <br>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</div> --}}
 
 </div>
 
