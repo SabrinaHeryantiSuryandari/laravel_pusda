@@ -71,7 +71,7 @@
             
                                 <a class="btn btn-info" href="{{ route('asets.show',$aset->id) }}">Detail</a>
                 
-<!-- Button trigger modal -->
+{{-- <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
     Launch demo modal
   </button>
@@ -168,7 +168,7 @@
                             <td>{{ $aset->th_pembangunan }}</td>
                         </tr>
                     </div>
-                </div>
+                </div> --}}
                 {{-- <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <tr>
@@ -177,7 +177,7 @@
                         </tr>
                     </div>
                 </div> --}}
-                <div class="col-xs-12 col-sm-12 col-md-12">
+                {{-- <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <tr>
                             <td>Tahun Rehab</td>
@@ -202,7 +202,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> --}}
 
                                 <a class="btn btn-primary" href="{{ route('asets.edit',$aset->id) }}">Edit</a>
             

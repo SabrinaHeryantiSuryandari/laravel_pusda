@@ -108,7 +108,7 @@ class AsetController extends Controller
       
         $aset->update($request->all());
       
-        return redirect()->route('laporan')
+        return redirect()->route('asets.index')
                         ->with('success','Aset updated successfully');
     
     }

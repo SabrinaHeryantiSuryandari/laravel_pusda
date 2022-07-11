@@ -192,9 +192,10 @@
                 </table>
                 <div class="col-xs-12 col-sm-12 col-md-12 text-center mt-3">
                     {{-- <div class="col-xs-12 col-sm-12 col-md-12"> --}}
-                    <div class="form-group">
+                    <div class="form-group text-center">
                         <tr>
                             <td>
+                                <br>
                                 <button type="submit" class="btn btn-success text-center">Submit</button>
                             </td>
                         </tr>
