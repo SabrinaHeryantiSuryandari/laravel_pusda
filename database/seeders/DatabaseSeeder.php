@@ -22,17 +22,6 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
             
         ]);
-        // $user = [
-        //     [
-        //         'username' => 'admin',
-        //        'name'=>'ini akun Admin',
-        //        'email'=>'admin@example.com',
-        //        'password'=> bcrypt('admin'),
-        //     ],
-        // ];
-        // foreach ($user as $key => $value) {
-        //     User::create($value);
-        // }
-    
+      
     }
 }
