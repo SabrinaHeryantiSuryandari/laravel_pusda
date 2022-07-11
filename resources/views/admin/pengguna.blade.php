@@ -97,7 +97,6 @@
     </div>
 @endif
 
-<table class="table table-bordered">
     {{-- <tr>
         <th>No</th>
         <th>Name</th>
@@ -106,7 +105,7 @@
     </tr> --}}
     <div class="col-12">
         <div class="row">
-    @foreach ($users as $user)
+    @foreach ($data as $title)
     {{-- <tr>
         <td>{{ ++$i }}</td>
         <td>{{ $user->name }}</td>
@@ -128,8 +127,8 @@
     <div class="col-3">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">{{ $user->title }}</h5>
-                <p class="card-text">{{ substr($user->content, 0, 100) }}</p>
+                <h5 class="card-title">{{ $title->name }}</h5>
+                <p class="card-text">{{ substr($title->email, 0, 100) }}</p>
                 <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
         </div>
@@ -137,10 +136,10 @@
     </div>
     @endforeach
         </div></div>
-</table>
-<div class="row text-center">
-    {!! $user->links() !!}
-</div>
+
+{{-- <div class="row text-center">
+    {!! $title->links() !!}
+</div> --}}
 
 <br>
 {{-- <div class="container">

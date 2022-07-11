@@ -129,7 +129,8 @@ href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"> --}
                 
                 <!-- Nav Item - Pages Collapse Menu -->
                 <li class="nav-item active">
-                    <a class="nav-link collapsed text-dark" href="/user">
+                    <a class="nav-link collapsed text-dark" href="/admin">
+                    {{-- <a class="nav-link collapsed text-dark" href="/pengguna"> --}}
                         <i class="fas fa-fw fa-folder"></i>
                         <span>Pengguna</span>
                     </a>
@@ -342,7 +343,7 @@ href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"> --}
     <script src="{{ asset('template/js/demo/datatables-demo.js')}}"></script>
     
     <!-- Page level plugins -->
-    {{-- <script src="{{ asset('template/vendor/chart.js/Chart.min.js')}}"></script> --}}
+    <script src="{{ asset('template/vendor/chart.js/Chart.min.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" integrity="sha512-yFjZbTYRCJodnuyGlsKamNE/LlEaEAxSUDe5+u61mV8zzqJVFOH7TnULE2/PP/l5vKWpUNnF4VGVkXh3MjgLsg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         const ctx = document.getElementById('myChart').getContext('2d');

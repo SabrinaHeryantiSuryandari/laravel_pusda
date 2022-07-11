@@ -29,8 +29,12 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
-
+    // protected $redirectTo = RouteServiceProvider::HOME;
+    // public function index(){
+    //     // $data   = User::all();
+    //     // return view('admin/pengguna')->with('user', $data);
+    //     return
+    // }
     /**
      * Create a new controller instance.
      *
@@ -38,7 +42,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware('pengguna');
     }
 
     /**

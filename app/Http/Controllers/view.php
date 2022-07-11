@@ -8,7 +8,7 @@ class view extends Controller
 {
     public function index()
     {
-        return view('admin/admin');
+        return view('index/admin');
     }
 
     public function login()
