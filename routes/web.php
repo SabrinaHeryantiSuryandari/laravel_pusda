@@ -60,4 +60,4 @@ Route::resource('asets', App\Http\Controllers\AsetController::class);
 Route::resource('/admin', App\Http\Controllers\Auth\RegisterController::class);
 
 
-Route::resource('/admin',[App\Http\Controllers\AdminController::class, 'index']);
+Route::resource('/getusr',[App\Http\Controllers\AdminController::class, 'index']);
