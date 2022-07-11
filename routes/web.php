@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\view;
+use App\Http\Controllers\AsetController;
+use App\Http\Controllers\GuestController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -46,18 +49,20 @@ Route::get('/create', function () {
 Auth::routes();
 Auth::routes(['verify' => false]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/admin',[view::class, 'index']);
 Route::get('/masuk',[view::class, 'login']);
+Route::post('/save',[view::class, 'save']);
 
-Route::get('/guest',[App\Http\Controllers\GuestController::class, 'index'])->name('guest');
+Route::get('/guest',[GuestController::class, 'index'])->name('guest');
 
-Route::get('/pengguna',[App\Http\Controllers\view::class, 'pengguna']);
+Route::get('/pengguna',[view::class, 'pengguna']);
 
 //tambahkan kode berikut
-Route::resource('asets', App\Http\Controllers\AsetController::class);
+Route::resource('/asets', AsetController::class);
 
-// Route::resource('/admin', App\Http\Controllers\Auth\RegisterController::class);
+Route::resource('/regis', RegisterController::class);
+// Route::resource('/save', App\Http\Controllers\view::class,'save');
 
 
 // Route::resource('/getusr',[App\Http\Controllers\AdminController::class, 'index']);
