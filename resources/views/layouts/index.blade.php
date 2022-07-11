@@ -129,8 +129,8 @@ href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"> --}
                 
                 <!-- Nav Item - Pages Collapse Menu -->
                 <li class="nav-item active">
-                    <a class="nav-link collapsed text-dark" href="/admin">
-                    {{-- <a class="nav-link collapsed text-dark" href="/pengguna"> --}}
+                    {{-- <a class="nav-link collapsed text-dark" href="/admin"> --}}
+                    <a class="nav-link collapsed text-dark" href="/pengguna">
                         <i class="fas fa-fw fa-folder"></i>
                         <span>Pengguna</span>
                     </a>

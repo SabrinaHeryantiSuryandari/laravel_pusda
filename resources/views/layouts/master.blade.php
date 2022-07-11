@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>SISTEM INFORMASI MANAJEMEN ASET TANAH</title>
 
     <!-- Custom fonts for this template-->
     <link href="{{ asset('template/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
@@ -26,6 +26,61 @@
 </head>
 
 <body id="page-top">
+    <nav class="navbar navbar-expand navbar-light topbar mb-auto static-top shadow" style="background-color: #2F8F9D;">
+
+        <!-- Sidebar Toggle (Topbar) -->
+        <a class="sidebar-brand d-flex align-items-center justify-content-center text-dark" href="/guest">
+            <div class="sidebar-brand-icon">
+               <img src="img/logo.png" alt="Image" width="110px" height="39px" >
+            </div>
+        </a>
+        {{-- <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+        </button> --}}
+        {{-- <div class="col-lg-4 mt-3" > --}}
+        <div class="col-lg-7 mt-3" >
+            <span style="color : #B3E8E5;">
+                Pusat Informasi Inventarisasi Aset Tanah
+            </span>
+            <p class="text-white">
+                Provinsi Jawa Timur
+            </p>
+        </div>
+        <div class="col-lg-4 mt-1" id="navbarNav">
+              <ul class="navbar-nav nav justify-content-end">
+                <li class="nav-item active">
+                  <a class="nav-link" href="/guest">Beranda</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/dataaset">Data Aset</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/evaluasi">Laporan Evaluasi</a>
+                </li>
+            </ul>
+        </div>
+          {{-- </nav> --}}
+
+        <!-- Topbar Search -->
+            {{-- <div class="container row">
+                <div class="col-lg-12 nav justify-content-end">
+
+                    <div class="col-lg-6">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small"
+                                placeholder="Search for..." aria-label="Search"
+                                aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> --}}
+        <!-- Topbar search -->
+    </nav>
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
@@ -33,61 +88,10 @@
             <div id="content">
 
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow" style="background-color: #2F8F9D;">
-
-                    <!-- Sidebar Toggle (Topbar) -->
-                    <a class="sidebar-brand d-flex align-items-center justify-content-center text-dark" href="index.html">
-                        <div class="sidebar-brand-icon">
-                           <img src="img/logo.png" alt="Image" width="110px" height="39px" >
-                        </div>
-                    </a>
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                    <div class="col-lg-4 mt-3" >
-                        <span style="color : #B3E8E5;">
-                            Pusat Informasi Inventarisasi Aset Tanah
-                        </span>
-                        <p class="text-white">
-                            Provinsi Jawa Timur
-                        </p>
-                    </div>
-                    <div class="col-lg-4 mt-1" id="navbarNav">
-                        <ul class="navbar-nav">
-                          <li class="nav-item active">
-                            <a class="nav-link" href="#">Beranda<span class="sr-only">(current)</span></a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="#">Data Aset</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="#">Laporan Evaluasi</a>
-                          </li>
-                        </ul>
-                      </div>
-                    <!-- Topbar Search -->
-                        <div class="container row">
-                            <div class="col-lg-12 nav justify-content-end">
-
-                                <div class="col-lg-6">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small"
-                                            placeholder="Search for..." aria-label="Search"
-                                            aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-search fa-sm"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <!-- Topbar search -->
-                </nav>
 
                  <!-- Begin Page Content -->
                  <div class="container-fluid">
+<br>
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
