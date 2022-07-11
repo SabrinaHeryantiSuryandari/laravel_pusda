@@ -31,8 +31,9 @@
 </form> --}}
 
 <form action="" method="POST" enctype="multipart/form-data">
-                        
-    @csrf
+          
+  {{-- //untuk aman agar tidak di hack --}}
+    @csrf 
 
     <div class="form-group">
         <label class="font-weight-bold">Nama</label>
