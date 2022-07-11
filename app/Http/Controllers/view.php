@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class view extends Controller
 {
@@ -14,5 +15,11 @@ class view extends Controller
     public function login()
     {
         return view('admin/login');
+    }
+
+    public function pengguna()
+    {
+        $data=User::all();
+        return view('admin/pengguna',$data);
     }
 }
