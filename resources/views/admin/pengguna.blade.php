@@ -29,8 +29,13 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form> --}}
-
-<form action="">
+@if (session()->has('message'))
+    <div class="alert alert-success">
+        {{ session()->get('message') }}
+    </div>
+    
+@endif
+<form action="/save" method="POST" enctype="multipart/form-data">
                         
     @csrf
 

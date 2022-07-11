@@ -27,20 +27,14 @@ class view extends Controller
         // dd($data);
     }
 
-    public function createuser()
+    public function save(Request $request)
     {
         $this->validate($request,[
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
         ]);
-
-        Post::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
-        return redirect()->route('admin/pengguna')->with(['success' => 'Data Berhasil Disimpan!']);
-        // return view('admin/pengguna');
+        User::create($request->all());
+        return redirect()->route('/pengguna')->with(['success' => 'Data Berhasil Disimpan!']);
     }
 }
