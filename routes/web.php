@@ -52,7 +52,7 @@ Route::get('/masuk',[view::class, 'login']);
 
 Route::get('/guest',[App\Http\Controllers\GuestController::class, 'index'])->name('guest');
 
-Route::get('/pengguna',[App\Http\Controllers\AdminController::class, 'index']);
+Route::get('/pengguna',[App\Http\Controllers\view::class, 'pengguna']);
 
 //tambahkan kode berikut
 Route::resource('asets', App\Http\Controllers\AsetController::class);
