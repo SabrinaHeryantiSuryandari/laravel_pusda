@@ -30,24 +30,30 @@
     <button type="submit" class="btn btn-primary">Submit</button>
 </form> --}}
 
+<<<<<<< HEAD
 <form action="" method="POST" enctype="multipart/form-data">
           
   {{-- //untuk aman agar tidak di hack --}}
     @csrf 
+=======
+<form action="">
+                        
+    @csrf
+>>>>>>> 309ac4789781f56322e3c4e70b42042f8f723448
 
     <div class="form-group">
         <label class="font-weight-bold">Nama</label>
-        <input type="text" class="form-control @error is-invalid @enderror" name="name">
+        <input type="text" class="form-control" name="name">
     </div>
 
     <div class="form-group">
         <label class="font-weight-bold">Email</label>
-        <input type="text" class="form-control @error('email') is-invalid @enderror" name="email">
+        <input type="text" class="form-control" name="email">
     </div>
 
     <div class="form-group">
         <label class="font-weight-bold">Password</label>
-        <input type="password" class="form-control @error('email') is-invalid @enderror" name="password">
+        <input type="password" class="form-control" name="password">
     </div>
 
     <button type="submit" class="btn btn-md btn-primary">SIMPAN</button>
