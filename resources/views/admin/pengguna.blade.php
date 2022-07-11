@@ -7,8 +7,6 @@
         {{'Pengguna'}}
     @endsection
 
-@foreach ($data as $view)
-    {{ $view }}
-@endforeach
+{{ $data }}
 
 @endsection
