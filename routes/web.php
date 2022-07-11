@@ -51,26 +51,13 @@ Route::get('/admin',[view::class, 'index']);
 Route::get('/masuk',[view::class, 'login']);
 
 Route::get('/guest',[App\Http\Controllers\GuestController::class, 'index'])->name('guest');
-// Route::get('/tamu',[view::class, 'index']);
-// Route::get('/masuk',[view::class, 'tamu']);
 
 Route::get('/pengguna',[App\Http\Controllers\AdminController::class, 'index']);
-// Route::get('/tambah',[view::class, 'index']);
-// Route::get('/masuk',[view::class, 'tamu']);
-
-//route resource
-// Route::get('/post', 'PostController@index');
-// Route::match(['get', 'post'],'/tambah',[App\Http\Controllers\TbAsetController::class, "tambah" ]);
-// Route::get('/tambah',[ PostController::class, "tambah" ]);
-// Route::post('/tambah',[ PostController::class, "tambah" ]);
 
 //tambahkan kode berikut
 Route::resource('asets', App\Http\Controllers\AsetController::class);
-// Route::resource('admin', App\Http\Controllers\AdminController::class);
 
-
-// Route::match(['get', 'post'],'user', [App\Http\Controllers\UserController::class, "pengguna"]);
-
-// Route::get('/admin', 'AdminController@index');
 Route::resource('/admin', App\Http\Controllers\Auth\RegisterController::class);
-// Route::resource('admin',App\Http\Controllers\AdminController::class);
+
+
+Route::resource('/admin',[App\Http\Controllers\AdminController::class, 'index']);
