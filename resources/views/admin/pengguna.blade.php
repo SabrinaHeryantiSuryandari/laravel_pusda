@@ -47,9 +47,9 @@
   {{-- </form> --}}
 {{-- @if (Route::has('register')) --}}
   <div class="card-header">{{ __('Register') }}</div>
-  {{-- <form action="/save" method="POST" enctype="multipart/form-data"> --}}
+  <form action="/save" method="POST" enctype="multipart/form-data">
   {{-- <form action="{{ route('regis.create') }}" method="POST" enctype="multipart/form-data"> --}}
-  <form action="{{ route('regis.create') }}" method="POST" enctype="multipart/form-data">
+  {{-- <form action="{{ route('regis.create') }}" method="POST" enctype="multipart/form-data"> --}}
                           
       @csrf
       {{-- Nama --}}
