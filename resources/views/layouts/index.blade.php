@@ -76,13 +76,13 @@ href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"> --}
                 </div>
                 
                 <!-- Nav Item - Pages Collapse Menu -->
-                <li class="nav-item @yield('input-data')">
-                <li class="nav-item collapsed">
+                {{-- <li class="nav-item @yield('input-data')">
+                <li class="nav-item collapsed"> --}}
                     {{-- <a class="nav-link text-dark" href="/create"> --}}
                     {{-- <a class="nav-link text-dark @yield('input-data-collapse')" href="" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"> --}}
-                    <a class="nav-link text-dark" href="" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    {{-- <a class="nav-link text-dark" href="" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"> --}}
                         {{-- <i class="fas fa-fw fa-cog"></i> --}}
-                        <i class="fa-solid fa-chart-pie"></i>
+                        {{-- <i class="fa-solid fa-chart-pie"></i>
                         <span>Input Data</span>
                     </a>
                     <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo"
@@ -93,22 +93,22 @@ href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"> --}
                             <a class="collapse-item @yield('input-belum')" href="{{ url('/belum-create') }}">Belum Tersertifikasi</a>
                         </div>
                     </div>
-                </li>
-                {{-- <li class="nav-item">
+                </li> --}}
+                <li class="nav-item">
                     <a class="nav-link collapsed text-dark" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
                         aria-controls="collapseTwo">
-                        <i class="fas fa-fw fa-cog"></i>
+                        <i class="fa-solid fa-chart-pie"></i>
                         <span>Input Data</span>
                     </a>
-                    <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo"
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                         data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">Custom Components:</h6>
-                            <a class="collapse-item" href="{{ url('/create') }}">Tersertifikasi</a>
+                            <a class="collapse-item" href="create">Tersertifikasi</a>
                             <a class="collapse-item active" href="{{ url('/belum-create') }}">Belum Tersertifikasi</a>
                         </div>
                     </div>
-                </li> --}}
+                </li>
 
                 <!-- Nav Item - Utilities Collapse Menu -->
                 <li class="nav-item active">

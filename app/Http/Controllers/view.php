@@ -36,7 +36,15 @@ class view extends Controller
             'password' => 'required|string|min:8|confirmed',
         ]);
         User::create($request->all());
-        return redirect()->route('/pengguna')
+        return redirect()->route('pengguna')
                         ->with(['success' => 'Data Berhasil Disimpan!']);
+    }
+    public function destroy(User $data)
+    {
+        $data->delete();
+       
+        return redirect()->route('pengguna')
+                        ->with(['success' => 'Data Berhasil Dihapus!']);
+    
     }
 }

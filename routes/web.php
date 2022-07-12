@@ -5,6 +5,7 @@ use App\Http\Controllers\view;
 use App\Http\Controllers\AsetController;
 use App\Http\Controllers\GuestController;
 use App\Http\Controllers\HomeController;
+use Illuminate\Contracts\View\View as ViewView;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -34,7 +35,7 @@ Route::get('/verified-create', function () {
 
 // route untuk input data yg belum terverifikasi
 Route::get('/create', function () {
-    return view('create');
+    return view('admin.create');
 });
 // Route::get('/tambah', function () {
 //     return view('guest.tambah');
@@ -57,11 +58,13 @@ Route::post('/save',[view::class, 'save']);
 Route::get('/guest',[GuestController::class, 'index'])->name('guest');
 
 Route::get('/pengguna',[view::class, 'pengguna']);
+// Route::dele('/delete',[view::class, 'destroy']);
+// Route::delete('/pengguna/{id}', 'view@destroy')->name('pengguna.destroy');
 
 //tambahkan kode berikut
 Route::resource('/asets', AsetController::class);
 
-Route::resource('/regis', RegisterController::class);
+// Route::resource('/pengguna', View::class);
 // Route::resource('/save', App\Http\Controllers\view::class,'save');
 
 

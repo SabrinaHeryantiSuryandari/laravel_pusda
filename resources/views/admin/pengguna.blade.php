@@ -1,80 +1,86 @@
 @extends('layouts/index')
 @section('content')
     @section('judul')
-        {{'Halaman '}}
+        {{'Admin '}}
     @endsection
     @section('title')
         {{'Pengguna'}}
     @endsection
 
-{{ $data }}
+{{-- {{ $data }} --}}
 
-{{-- <form action="POST">
-    <div class="form-group">
-      <label for="exampleInputEmail1">Nama</label>
-      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Email</label>
-      <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Password">
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-    </div>
-    <div class="form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form> --}}
-{{-- <<<<<<< HEAD --}}
+<div class="col-12">
+  <div class="row">
+      @foreach ($data as $item)
+      <div class="col-3">
+          <div class="card">
+              <div class="card-body">
+                  <h5 class="card-title">{{ $item->name }}</h5>
+                  <p class="card-text">{{ ($item->email) }}</p>
+                  {{-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
+                  {{-- <form action="{{ route('delete',$item->id) }}" method="POST"> --}}
+            
+                    {{-- <a class="btn btn-info" href="{{ route('asets.show',$item->id) }}">Detail</a> --}}
+                    {{-- <a class="btn btn-primary" href="{{ route('asets.edit',$item->id) }}">Edit</a> --}}
+{{--             
+                                @csrf
+                                @method('DELETE')
+                
+                                <a type="submit" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></a>
+                            </form> --}}
+                            
+                            {{-- <a href="{{route('pengguna.destroy', ['id' => $data->id])}}" onclick="return confirm('Weet je dit zeker?')">
+                              <i class="fa fa-trash"></i>
+                            </a> --}}
+              </div>
+          </div>
+          <br>
+      </div>
+      @endforeach
+      <div class="col-3">
+        <div class="card">
+            <div class="card-body text-center">
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        <i class="fa-solid fa-plus"></i>
+      </button>
+      </div>
+      </div>
+      <br>
+      </div>
+  </div>
+</div>
 
-{{-- <<<<<<< HEAD --}}
-{{-- <form action="" method="POST" enctype="multipart/form-data"> --}}
-          
-  {{-- //untuk aman agar tidak di hack --}}
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
     @csrf 
-  {{-- ======= --}}
-  {{-- <form action=""> --}}
-  {{-- ======= --}}
     @if (session()->has('message'))
         <div class="alert alert-success">
             {{ session()->get('message') }}
         </div>
     @endif
-  {{-- </form> --}}
-{{-- @if (Route::has('register')) --}}
-  <div class="card-header">{{ __('Register') }}</div>
+
+  <div class="card-header text-center">{{ __('Register') }}</div>
+  <br>
   <form action="/save" method="POST" enctype="multipart/form-data">
-  {{-- <form action="{{ route('regis.create') }}" method="POST" enctype="multipart/form-data"> --}}
-  {{-- <form action="{{ route('regis.create') }}" method="POST" enctype="multipart/form-data"> --}}
                           
       @csrf
       {{-- Nama --}}
-      {{-- <div class="form-group">
-          <label class="font-weight-bold">Nama</label>
-          <input type="text" class="form-control" name="name">
-      </div> --}}
-      {{-- <div class="row mb-3">
-        <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
-        
-        <div class="col-md-6">
-            <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-            @error('name')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
-        </div>
-      </div> --}}
       <div class="row mb-3">
         <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
         
         <div class="col-md-6">
-          <input type="text" name="name" value="{{ old('name') }}" placeholder="Name">
+          <input id="name" type="text" name="name" class="form-control" value="{{ old('name') }}" required autocomplete="name" autofocus>
             <br>
           
             @error('name')
@@ -86,28 +92,11 @@
       </div>
       
       {{-- Email --}}
-      {{-- <div class="form-group">
-          <label class="font-weight-bold">Email</label>
-          <input type="text" class="form-control" name="email">
-      </div> --}}
-      {{-- <div class="row mb-3">
-        <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-        <div class="col-md-6">
-            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-            @error('email')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
-        </div>
-      </div> --}}
       <div class="row mb-3">
         <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
 
         <div class="col-md-6">
-          <input type="text" name="email" value="{{ old('email') }}" placeholder="email">
+          <input id="email" type="text" name="email" class="form-control" value="{{ old('email') }}" required autocomplete="email">
             <br>
             @error('email')
                 <span class="invalid-feedback" role="alert">
@@ -118,28 +107,11 @@
       </div>
 
       {{-- Password --}}
-      {{-- <div class="form-group">
-          <label class="font-weight-bold">Password</label>
-          <input type="password" class="form-control" name="password">
-      </div> --}}
-      {{-- <div class="row mb-3">
-        <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-        <div class="col-md-6">
-            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-            @error('password')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
-        </div>
-      </div> --}}
       <div class="row mb-3">
         <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
 
         <div class="col-md-6">
-          <input type="text" name="password" value="{{ old('password') }}" placeholder="password">
+          <input id="password" type="text" name="password" class="form-control" value="{{ old('password') }}" required autocomplete="new-password">
             <br>
             @error('password')
                 <span class="invalid-feedback" role="alert">
@@ -158,19 +130,22 @@
           </div>
       </div>
 
-      <div class="row mb-0">
-        <div class="col-md-6 offset-md-4">
-            <button type="submit" class="btn btn-primary">
-                {{-- {{ __('Register') }} --}}
-                Register
-            </button>
-        </div>
-    </div>
+      {{-- Register --}}
+      <div class="col-md-6 offset-md-4">
+          <button type="submit" class="btn btn-primary">
+              {{-- {{ __('Register') }} --}}
+              Register
+          </button>
+      </div>
 
       {{-- <button type="submit" class="btn btn-md btn-primary">SIMPAN</button>
       <button type="reset" class="btn btn-md btn-warning">RESET</button> --}}
   </form>
-{{-- </form>  --}}
-{{-- @endif --}}
+      </div>
+
+    </div>
+  </div>
+</div>
+
 
 @endsection
