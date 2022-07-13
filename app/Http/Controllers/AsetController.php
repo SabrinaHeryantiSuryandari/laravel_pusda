@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\aset;
+use App\Models\Pemilik;
+
 use Illuminate\Http\Request;
 
 class AsetController extends Controller
