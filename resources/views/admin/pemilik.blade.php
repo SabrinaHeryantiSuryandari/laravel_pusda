@@ -18,7 +18,7 @@
     </div>
 @endif
 
-{{-- <form action="{{ route('pemilik.store') }}" method="POST">
+<form action="{{ route('pemilik.store') }}" method="POST">
     @csrf
 
     <div class="row">
@@ -179,14 +179,14 @@
                                     </td>
                                 </tr> 
                             </div>
-                        </div> --}}
+                        </div> 
                         {{-- <div>
                             <div>
                                 <input type="text" class="from-control" name="aset_id" id="aset_id" placeholder="id" readonly="" 
                                 value="{{$pemilik->max('aset_id')+1}}">
                             </div>
                         </div> --}}
-                    {{-- </table>
+                    </table>
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center mt-3">
                         <div class="form-group text-center">
                             <tr>
@@ -203,8 +203,9 @@
         </div>
     </div>
     
-</form> --}}
-<form action="{{ route('pemilik.store') }}" method="POST">
+</form>
+
+{{-- <form action="{{ route('pemilik.store') }}" method="POST">
     @csrf
 
     <div class="row">
@@ -260,15 +261,8 @@
                                 </tr> 
                             </div>
                         </div>
-                        {{-- <div>
-                            <div>
-                                <input type="text" class="from-control" name="aset_id" id="aset_id" placeholder="id" readonly="" 
-                                value="{{$pemilik->max('aset_id')+1}}">
-                            </div>
-                        </div> --}}
                     </table>
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center mt-3">
-                        {{-- <div class="col-xs-12 col-sm-12 col-md-12"> --}}
                         <div class="form-group text-center">
                             <tr>
                                 <td>
@@ -284,6 +278,6 @@
         </div>
     </div>
     
-</form>
+</form> --}}
 
 @endsection
