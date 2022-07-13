@@ -104,8 +104,8 @@ href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"> --}
                         data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">Custom Components:</h6>
-                            <a class="collapse-item active" href="create">Tersertifikasi</a>
-                            <a class="collapse-item active" href="tambah">Belum Tersertifikasi</a>
+                            <a class="collapse-item active" href="tambah">Tersertifikasi</a>
+                            <a class="collapse-item active" href="create">Belum Tersertifikasi</a>
                         </div>
                     </div>
                 </li>

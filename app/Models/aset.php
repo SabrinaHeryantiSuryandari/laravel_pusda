@@ -4,7 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Database\Eloquent\Relations\HasOne;
+$asetPemilik = Aset::find(1)->pemilik;
 class aset extends Model
 {
     use HasFactory;
@@ -25,10 +26,11 @@ class aset extends Model
             'keterangan_aset'
     ];
 
-    protected $table = "asets";
+    // protected $table = "asets";
+    
  
     public function pemilik()
     {
-    	return $this->hasOne(Pemilik::class);
+    	return $this->hasOne(pemilik::class);
     }
 }

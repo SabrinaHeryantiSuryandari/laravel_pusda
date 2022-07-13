@@ -66,8 +66,8 @@
                                     <td>
                                         <select name="status_aset" value="{{ old('status_aset') }}">
                                             <option value="">-----Pilih Status Aset------</option>
-                                            <option value="Tersertifikasi" selected>Tersertifikasi</option>
-                                            <option value="Belum Tersertifikasi">Belum Tersertifikasi</option>
+                                            <option value="Tersertifikasi" >Tersertifikasi</option>
+                                            <option value="Belum Tersertifikasi" selected>Belum Tersertifikasi</option>
                                         </select>
                                         <br>
                                         <small class="text-danger">{{ $errors->first('status_aset') }}</small>
@@ -203,7 +203,7 @@
             </div>
         </div>
     </div>
-    
+
 </form>
 
 @endsection
