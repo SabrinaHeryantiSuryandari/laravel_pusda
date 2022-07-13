@@ -56,11 +56,11 @@ class AsetController extends Controller
             'keterangan_aset' => 'required'
         ]);
       
-        // Aset::create($request->all()); 
-        $aset = Aset::create($request->except(['aset_id', 'nama', 'keterangan']));
-        $pemilik = Pemilik::create(['aset_id' => $aset->id, $request->only(['nama', 'keterangan', 'aset_id'])]);
+        Aset::create($request->all()); 
+        // $aset = Aset::create($request->except(['aset_id', 'nama', 'keterangan']));
+        // $pemilik = Pemilik::create(['aset_id' => $aset->id, $request->only(['nama', 'keterangan', 'aset_id'])]);
 
-        return redirect()->route('laporan')
+        return redirect()->route('asets.index')
                         ->with('success','Aset created successfully.');
     }
 
