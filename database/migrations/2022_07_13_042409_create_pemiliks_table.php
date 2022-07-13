@@ -1,6 +1,5 @@
 <?php
 
-use Faker\Core\Number;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -16,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('pemiliks', function (Blueprint $table) {
             $table->id();
-            $table->string('id_aset');
+            $table->foreignId('aset_id')->constrained()->onDelete('cascade');
             $table->string('nama');
             $table->string('keterangan');
             $table->timestamps();

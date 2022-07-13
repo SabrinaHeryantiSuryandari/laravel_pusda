@@ -1,28 +1,13 @@
 @extends('layouts/index')
-@section('input-data', 'active')
-@section('input-data-collapse', 'collapsed')
-@section('input-sudah', 'active')
 @section('content')
     @section('judul')
-        {{'Input Data'}}
+        {{'Admin '}}
     @endsection
     @section('title')
-        {{'Input Data'}}
+        {{'Pengguna'}}
     @endsection
 
-<!-- Content Row -->
-<div class="row">
-    <div class="col-lg-12 margin-tb">
-        <div>
-            {{-- <h2>Add New Student</h2> --}}
-        </div>
-        <div>
-            {{-- <a class="btn btn-primary" href="{{ route('laporan') }}"> Back</a> --}}
-        </div>
-    </div>
-</div>
-
-@if ($errors->any())
+    @if ($errors->any())
     <div class="alert alert-danger">
         <strong>Whoops!</strong> There were some problems with your input.<br><br>
         <ul>
@@ -32,8 +17,8 @@
         </ul>
     </div>
 @endif
-   
-<form action="{{ route('asets.store') }}" method="POST">
+
+{{-- <form action="{{ route('pemilik.store') }}" method="POST">
     @csrf
 
     <div class="row">
@@ -46,8 +31,6 @@
                     <table class="" style="margin:20px auto;" id="dataTable" width="100%" cellspacing="0">
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
-                            {{-- <strong>Name:</strong>
-                            <input type="text" name="name" class="form-control" placeholder="Name"> --}}
                                 <tr>
                                     <td>No Sertifikat</td>
                                     <td>
@@ -55,12 +38,6 @@
                                         <br>
                                         <small class="text-danger">{{ $errors->first('no_sertifikat') }}</small>
                                     </td>
-                                    {{-- <td>Nama Aset</td>
-                                    <td>
-                                        <input id="text" name="alamat_aset" value="{{ old('alamat_aset') }}" placeholder="Nama Aset">
-                                        <br>
-                                        <small class="text-danger">{{ $errors->first('alamat_aset') }}</small>
-                                    </td> --}}
 
                                     <td>Status Aset</td>
                                     <td>
@@ -151,7 +128,6 @@
                                 <tr>
                                     <td>Tahun Rehabilitasi</td>
                                     <td>
-                                        {{-- <input type="date" id="text" name="th_rehab" value="{{ old('th_rehab') }}"> --}}
                                         <input id="text" name="th_rehab" value="{{ old('th_rehab') }}" placeholder="Tahun Rehabilitasi">
                                         <br>
                                         <small class="text-danger">{{ $errors->first('th_rehab') }}</small>
@@ -159,7 +135,6 @@
                                     <td>Tahun Kepemilikan</td>
                                     <td>
                                         <input type="date" id="text" name="th_kepemilikan" value="{{ old('th_kepemilikan') }}">
-                                        {{-- <input id="text" name="th_kepemilikan" value="{{ old('th_kepemilikan') }}"> --}}
                                         <br>
                                         <small class="text-danger">{{ $errors->first('th_kepemilikan') }}</small>
                                     </td>
@@ -180,13 +155,117 @@
                                     <td>Tahun Pembangunan</td>
                                     <td>
                                         <input type="date" id="text" name="th_pembangunan" value="{{ old('th_pembangunan') }}">
-                                        {{-- <input id="text" name="th_pembangunan" value="{{ old('th_pembangunan') }}"> --}}
                                         <br>
                                         <small class="text-danger">{{ $errors->first('th_pembangunan') }}</small>
                                     </td>
                                 </tr> 
                             </div>
                         </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <tr>
+                                    <td>Nama Pemilik</td>
+                                    <td>
+                                        <input id="text" name="nama" value="{{ old('nama') }}" placeholder="nama">
+                                        <br>
+                                        <small class="text-danger">{{ $errors->first('nama') }}</small>
+                                    </td>
+                                    
+                                    <td>Keterangan</td>
+                                    <td>
+                                        <input type="text" id="text" name="keterangan" value="{{ old('keterangan') }}">
+                                        <br>
+                                        <small class="text-danger">{{ $errors->first('keterangan') }}</small>
+                                    </td>
+                                </tr> 
+                            </div>
+                        </div> --}}
+                        {{-- <div>
+                            <div>
+                                <input type="text" class="from-control" name="aset_id" id="aset_id" placeholder="id" readonly="" 
+                                value="{{$pemilik->max('aset_id')+1}}">
+                            </div>
+                        </div> --}}
+                    {{-- </table>
+                    <div class="col-xs-12 col-sm-12 col-md-12 text-center mt-3">
+                        <div class="form-group text-center">
+                            <tr>
+                                <td>
+                                    <br>
+                                    <button type="submit" class="btn btn-success text-center">Submit</button>
+                                </td>
+                            </tr>
+                        </div>
+                    </div>
+ 
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</form> --}}
+<form action="{{ route('pemilik.store') }}" method="POST">
+    @csrf
+
+    <div class="row">
+        <div class="card shadow mb-3 ">
+            <div class="card-header py-2 ">
+                <h6 class="m-0 font-weight-bold text-black text-center">Masukkan Data Baru</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive" >
+                    <table class="" style="margin:20px auto;" id="dataTable" width="100%" cellspacing="0">
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <tr>
+                                    <td>aset</td>
+                                    <td>
+                                        <select name="aset_id" id="aset_id" class="form-control">
+                                            <option value="" disabled selected></option>
+                                            @foreach($asets as $aset)
+                                            <option value="{{$aset->id}}">{{$aset->no_sertifikat}}</option>
+                                            @endforeach
+                                        </select>
+                                    </td>
+                                    <td>Status Aset</td>
+                                    <td>
+                                        <select name="status_aset" value="{{ old('status_aset') }}">
+                                            <option value="">-----Pilih Status Aset------</option>
+                                            <option value="Tersertifikasi" selected>Tersertifikasi</option>
+                                            <option value="Belum Tersertifikasi">Belum Tersertifikasi</option>
+                                        </select>
+                                        <br>
+                                        <small class="text-danger">{{ $errors->first('status_aset') }}</small>
+                                    </td>
+                                </tr> 
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <tr>
+                                    <td>Nama Pemilik</td>
+                                    <td>
+                                        <input id="text" name="nama" value="{{ old('nama') }}" placeholder="nama">
+                                        <br>
+                                        <small class="text-danger">{{ $errors->first('nama') }}</small>
+                                    </td>
+                                    
+                                    <td>Keterangan</td>
+                                    <td>
+                                        <input type="text" id="text" name="keterangan" value="{{ old('keterangan') }}">
+                                        <br>
+                                        <small class="text-danger">{{ $errors->first('keterangan') }}</small>
+                                    </td>
+                                </tr> 
+                            </div>
+                        </div>
+                        {{-- <div>
+                            <div>
+                                <input type="text" class="from-control" name="aset_id" id="aset_id" placeholder="id" readonly="" 
+                                value="{{$pemilik->max('aset_id')+1}}">
+                            </div>
+                        </div> --}}
                     </table>
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center mt-3">
                         {{-- <div class="col-xs-12 col-sm-12 col-md-12"> --}}
@@ -199,6 +278,7 @@
                             </tr>
                         </div>
                     </div>
+ 
                 </div>
             </div>
         </div>

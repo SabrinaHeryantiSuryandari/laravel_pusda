@@ -5,6 +5,7 @@ use App\Http\Controllers\view;
 use App\Http\Controllers\AsetController;
 use App\Http\Controllers\GuestController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PemilikController;
 use Illuminate\Contracts\View\View as ViewView;
 use Illuminate\Support\Facades\Auth;
 
@@ -37,9 +38,9 @@ Route::get('/verified-create', function () {
 Route::get('/create', function () {
     return view('admin.create');
 });
-// Route::get('/tambah', function () {
-//     return view('guest.tambah');
-// });
+Route::get('/tambah', function () {
+    return view('admin.pemilik');
+});
 // Route::get('/pengguna', function () {
 //     return view('admin.pengguna');
 // });
@@ -64,6 +65,7 @@ Route::get('/pengguna',[view::class, 'pengguna']);
 //tambahkan kode berikut
 Route::resource('/asets', AsetController::class);
 
+Route::resource('/pemilik', PemilikController::class);
 // Route::resource('/pengguna', View::class);
 // Route::resource('/save', App\Http\Controllers\view::class,'save');
 

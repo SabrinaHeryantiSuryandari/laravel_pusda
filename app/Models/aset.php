@@ -24,4 +24,11 @@ class aset extends Model
             'th_rehab',
             'keterangan_aset'
     ];
+
+    protected $table = "asets";
+ 
+    public function pemilik()
+    {
+    	return $this->hasOne('pemilik::class');
+    }
 }
