@@ -12,6 +12,6 @@ class pemilik extends Model
  
     public function aset()
     {
-    	return $this->belongsTo('aset::class');
+    	return $this->belongsTo(aset::class);
     }
 }

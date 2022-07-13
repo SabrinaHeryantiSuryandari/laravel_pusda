@@ -29,6 +29,6 @@ class aset extends Model
  
     public function pemilik()
     {
-    	return $this->hasOne('pemilik::class');
+    	return $this->hasOne(Pemilik::class);
     }
 }
