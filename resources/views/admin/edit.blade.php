@@ -58,8 +58,7 @@
 
                                                 <option value="">-----Pilih Status Aset------</option>
                                                 <option value="Tersertifikasi">Tersertifikasi</option>
-                                                <option value="Dalam Verifikasi">Dalam Verifikasi</option>
-                                                <option value="Belum Terdata">Belum Terdata</option>
+                                                <option value="Belum Tersertifikasi">Belum Tersertifikasi</option>
                                             </select>
                                         </td>
                                     </tr>

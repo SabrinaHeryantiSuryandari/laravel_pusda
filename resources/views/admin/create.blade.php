@@ -68,8 +68,7 @@
                                     <select name="status_aset" value="{{ old('status_aset') }}">
                                         <option value="" selected>-----Pilih Status Aset------</option>
                                         <option value="Tersertifikasi">Tersertifikasi</option>
-                                        <option value="Dalam Verifikasi">Dalam Verifikasi</option>
-                                        <option value="Belum Terdata">Belum Terdata</option>
+                                        <option value="Belum Tersertifikasi">Belum Tersertifikasi</option>
                                     </select>
                                     <br>
                                     <small class="text-danger">{{ $errors->first('status_aset') }}</small>
