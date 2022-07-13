@@ -57,8 +57,8 @@ class AsetController extends Controller
         ]);
       
         // Aset::create($request->all()); 
-        $aset = Aset::create($request->except([]));
-        $pemilik = Pemilik::create(['aset_id' => $aset->id, $request->only([])]);
+        $aset = Aset::create($request->except(['aset_id', 'nama', 'keterangan']));
+        $pemilik = Pemilik::create(['aset_id' => $aset->id, $request->only(['nama', 'keterangan', 'aset_id'])]);
 
         return redirect()->route('laporan')
                         ->with('success','Aset created successfully.');
