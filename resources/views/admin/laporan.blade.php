@@ -217,9 +217,9 @@
                     </tbody>
                 </table>
             
-    <div class="row text-center">
+    {{-- <div class="row text-center">
         {!! $asets->links() !!}
-    </div>
+    </div> --}}
 </div>
         </div>
     </div>
