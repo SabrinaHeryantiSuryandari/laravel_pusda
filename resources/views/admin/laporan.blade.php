@@ -70,7 +70,8 @@
                         <td>
                             <form action="{{ route('asets.destroy',$aset->id) }}" method="POST">
             
-                                <a data-toggle="modal" data-target="#exampleModal" class="btn btn-info" href="{{ route('asets.show',$aset->id) }}">Detail</a>
+                                <a class="btn btn-info" href="{{ route('asets.show',$aset->id) }}">Detail</a>
+                                {{-- <a data-toggle="modal" data-target="#exampleModal" class="btn btn-info" href="{{ route('asets.show',$aset->id) }}">Detail</a> --}}
                 
 <!-- Button trigger modal -->
 {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
