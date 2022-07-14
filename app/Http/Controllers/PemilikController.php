@@ -38,7 +38,7 @@ class PemilikController extends Controller
         $asets = Aset::create($request->except(['nama', 'keterangan']));
 
         $request['aset_id'] = $asets->id;
-        $pemilik = Pemilik::create($request->only(['aset_id', 'nama', 'keterangan']));
+        // $pemilik = Pemilik::create($request->only(['aset_id', 'nama', 'keterangan']));
 
         // return redirect('/');
         return back()->with('success',' Post baru berhasil dibuat.');

@@ -12,7 +12,7 @@ class aset extends Model
 
     protected $fillable = [
         // 'name', 'kelas' ,
-        'id',
+        // 'id',
             'no_sertifikat',
             'nama_aset',
             'alamat_aset',
