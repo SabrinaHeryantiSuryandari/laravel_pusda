@@ -7,7 +7,7 @@
         {{'Pengguna'}}
     @endsection
 
-    @if ($errors->any())
+@if ($errors->any())
     <div class="alert alert-danger">
         <strong>Whoops!</strong> There were some problems with your input.<br><br>
         <ul>
@@ -18,7 +18,7 @@
     </div>
 @endif
 
-<form action="{{ route('pemilik.store') }}" method="POST">
+<form action="{{ route('pemilik.store') }}" method="POST" >
     @csrf
 
     <div class="row">
@@ -180,12 +180,6 @@
                                 </tr> 
                             </div>
                         </div> 
-                        {{-- <div>
-                            <div>
-                                <input type="text" class="from-control" name="aset_id" id="aset_id" placeholder="id" readonly="" 
-                                value="{{$pemilik->max('aset_id')+1}}">
-                            </div>
-                        </div> --}}
                     </table>
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center mt-3">
                         <div class="form-group text-center">
@@ -205,7 +199,7 @@
     
 </form>
 
-{{-- <form action="{{ route('pemilik.store') }}" method="POST">
+{{-- <form action="{{ route('pemilik.store') }}" method="POST" id="datatabel">
     @csrf
 
     <div class="row">
@@ -223,7 +217,8 @@
                                     <td>
                                         <select name="aset_id" id="aset_id" class="form-control">
                                             <option value="" disabled selected></option>
-                                            @foreach($asets as $aset)
+
+                                            @foreach ($asets as $aset)
                                             <option value="{{$aset->id}}">{{$aset->no_sertifikat}}</option>
                                             @endforeach
                                         </select>

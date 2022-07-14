@@ -65,7 +65,7 @@
                         <td>{{ $aset->th_kepemilikam }}</td>
                         <td>{{ $aset->th_pembangunan }}</td>
                         <td>{{ $aset->th_rehab }}</td> --}}
-                        <td>{{ $aset->keterangan }}</td>
+                        <td>{{ $aset->keterangan_aset }}</td>
                         <td>
                             <form action="{{ route('asets.destroy',$aset->id) }}" method="POST">
             

@@ -12,6 +12,7 @@ class aset extends Model
 
     protected $fillable = [
         // 'name', 'kelas' ,
+        'id',
             'no_sertifikat',
             'nama_aset',
             'alamat_aset',
@@ -27,10 +28,12 @@ class aset extends Model
     ];
 
     protected $table = "asets";
+    protected $primarykay = "id";
     
  
     public function pemilik()
     {
+    	// return $this->hasOne(pemilik::class, 'foreign_key');
     	return $this->hasOne(pemilik::class);
     }
 }

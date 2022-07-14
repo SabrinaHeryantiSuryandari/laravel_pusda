@@ -30,6 +30,7 @@ class AsetController extends Controller
      */
     public function create()
     {
+        // $asets 
         return view('admin.create');
     }
 
@@ -42,6 +43,7 @@ class AsetController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'id' => 'required',
             'no_sertifikat' => 'required',
             'nama_aset' => 'required',
             'alamat_aset' => 'required',
@@ -57,8 +59,8 @@ class AsetController extends Controller
         ]);
       
         Aset::create($request->all()); 
-        // $aset = Aset::create($request->except(['aset_id', 'nama', 'keterangan']));
-        // $pemilik = Pemilik::create(['aset_id' => $aset->id, $request->only(['nama', 'keterangan', 'aset_id'])]);
+        // $asets = Aset::create($request->except(['aset_id', 'nama', 'keterangan']));
+        // $pemilik = Pemilik::create(['aset_id' => $asets->id, $request->only(['nama', 'keterangan', 'aset_id'])]);
 
         return redirect()->route('asets.index')
                         ->with('success','Aset created successfully.');
