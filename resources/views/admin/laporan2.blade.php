@@ -23,6 +23,15 @@
 
 <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"> --}}
+    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> --}}
+
+
+
+            {{-- import file bootstrap  --}}
+            {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+                integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"> --}}
+
 </head>
 
 <body id="page-top">
@@ -259,7 +268,223 @@
                     </div>
 
                         {{-- isi --}}
-                        @yield('content')
+                        <div class="row container-fluid">
+                            {{-- <div class="row mt-5">
+                                <div class="col-lg-12 margin-tb">
+                                    <div class="float-start">
+                                        <h2>Laravel 9 CRUD School Application</h2>
+                                    </div>
+                                    <div class="float-end">
+                                        <a class="btn btn-success" href="create"> Create New student</a>
+                                    </div>
+                                </div>
+                            </div> --}}
+
+                            <div class="card shadow mb-3 ">
+                                <div class="card-header py-2 ">
+                                    <h6 class="m-0 font-weight-bold text-black text-center">Tabel Data Aset</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        @if ($message = Session::get('success'))
+                                            <div class="alert alert-success">
+                                                <p>{{ $message }}</p>
+                                            </div>
+                                        @endif
+                                        {{-- <table class="table table-bordered" id="datatabels" width="100%" cellspacing="0"> --}}
+                                        <table class="table table-bordered" id="example" style="width:100%">
+                                            <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th>No Sertifikat</th>
+                                                <th>Nama Aset</th>
+                                                <th>Alamat</th>
+                                                {{-- <th>Luas Aset</th> --}}
+                                                <th>Status Aset</th>
+                                                {{-- <th>Kondisi Aset</th>
+                                                <th>Kondisi Geografis</th>
+                                                <th>Asal Usul</th>
+                                                <th>Tahun Kepemilikan</th>
+                                                <th>Tahun Pembangunan</th>
+                                                <th>Tahun Rehab</th> --}}
+                                                <th>Keterangan</th>
+                                                <th width="280px">Action</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            @foreach ($asets as $aset)
+                                            <tr>
+                                                <td>{{ $aset->id }}</td>
+                                                <td>{{ $aset->no_sertifikat }}</td>
+                                                <td>{{ $aset->nama_aset }}</td>
+                                                <td>{{ $aset->alamat_aset }}</td>
+                                                {{-- <td>{{ $aset->luas_aset }}</td> --}}
+                                                <td>{{ $aset->status_aset }}</td>
+                                                {{-- <td>{{ $aset->kondisi_aset }}</td>
+                                                <td>{{ $aset->kondisi_geografis }}</td>
+                                                <td>{{ $aset->asalusul_aset }}</td>
+                                                <td>{{ $aset->th_kepemilikam }}</td>
+                                                <td>{{ $aset->th_pembangunan }}</td>
+                                                <td>{{ $aset->th_rehab }}</td> --}}
+                                                <td>{{ $aset->keterangan_aset }}</td>
+                                                <td>
+                                                    <form action="{{ route('asets.destroy',$aset->id) }}" method="POST">
+
+                                                        <a class="btn btn-info" href="{{ route('asets.show',$aset->id) }}">Detail</a>
+
+                        {{-- <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                            Launch demo modal
+                          </button>
+
+                          <!-- Modal -->
+                          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <div class="modal-body">
+                                    @foreach ($asets as $aset)
+                                    <table class="" style="margin:20px auto;" id="dataTable" width="100%" cellspacing="0">
+                                        <div class="col-xs-12 col-sm-12 col-md-12">
+                                            <div class="form-group">
+                                                <tr>
+                                                    <td>No Sertifikat:</td>
+                                                    <td>{{ $aset->no_sertifikat }}</td>
+                                                </tr>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-12 col-md-12">
+                                            <div class="form-group">
+                                                <tr>
+                                                    <td>Nama Aset:</td>
+                                                    <td>{{ $aset->nama_aset }}</td>
+                                                </tr>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-12 col-md-12">
+                                            <div class="form-group">
+                                                <tr>
+                                                    <td>Alamat:</td>
+                                                    <td>{{ $aset->alamat_aset }}</td>
+                                                </tr>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-12 col-md-12">
+                                            <div class="form-group">
+                                                <tr>
+                                                    <td>Luas Aset:</td>
+                                                    <td>{{ $aset->luas_aset }}</td>
+                                                </tr>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-12 col-md-12">
+                                            <div class="form-group">
+                                                <tr>
+                                                    <td>Status Aset:</td>
+                                                    <td>{{ $aset->status_aset }}</td>
+                                                </tr>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-12 col-md-12">
+                                            <div class="form-group">
+                                                <tr>
+                                                    <td>Kondisi Aset:</td>
+                                                    <td>{{ $aset->kondisi_aset }}</td>
+                                                </tr>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-12 col-md-12">
+                                            <div class="form-group">
+                                                <tr>
+                                                    <td>Kondisi Geografis:</td>
+                                                    <td>{{ $aset->kondisi_geografis }}</td>
+                                                </tr>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-12 col-md-12">
+                                            <div class="form-group">
+                                                <tr>
+                                                    <td>Asal Aset</td>
+                                                    <td>{{ $aset->asalusul_aset }}</td>
+                                                </tr>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-12 col-md-12">
+                                            <div class="form-group">
+                                                <tr>
+                                                    <td>Tahun Kepemilikan</td>
+                                                    <td>{{ $aset->th_kepemilikan }}</td>
+                                                </tr>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-12 col-md-12">
+                                            <div class="form-group">
+                                                <tr>
+                                                    <td>Tahun Pembangunan</td>
+                                                    <td>{{ $aset->th_pembangunan }}</td>
+                                                </tr>
+                                            </div>
+                                        </div> --}}
+                                        {{-- <div class="col-xs-12 col-sm-12 col-md-12">
+                                            <div class="form-group">
+                                                <tr>
+                                                    <td>Tahun Pembangunan</td>
+                                                    <td>{{ $aset->th_pembangunan }}</td>
+                                                </tr>
+                                            </div>
+                                        </div> --}}
+                                        {{-- <div class="col-xs-12 col-sm-12 col-md-12">
+                                            <div class="form-group">
+                                                <tr>
+                                                    <td>Tahun Rehab</td>
+                                                    <td>{{ $aset->th_rehab }}</td>
+                                                </tr>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-12 col-md-12">
+                                            <div class="form-group">
+                                                <tr>
+                                                    <td>Keterangan</td>
+                                                    <td>{{ $aset->keterangan_aset }}</td>
+                                                </tr>
+                                            </div>
+                                        </div>
+                                    </table>
+                                    @endforeach
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                  <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div> --}}
+
+                                                        <a class="btn btn-primary" href="{{ route('asets.edit',$aset->id) }}">Edit</a>
+
+                                                        @csrf
+                                                        @method('DELETE')
+
+                                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                            @endforeach
+                                            </tbody>
+                                        </table>
+
+                            {{-- <div class="row text-center">
+                                {!! $asets->links() !!}
+                            </div> --}}
+                        </div>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
                     <!-- /.container-fluid -->
