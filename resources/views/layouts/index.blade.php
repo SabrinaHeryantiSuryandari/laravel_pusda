@@ -326,6 +326,7 @@ href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"> --}
         </div>
     </div>
 
+{{-- @section --}}
     <!-- Bootstrap core JavaScript-->
     <script src="{{ asset('template/vendor/jquery/jquery.min.js')}}"></script>
     <script src="{{ asset('template/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
@@ -425,6 +426,7 @@ $(document).ready(function () {
 $('#example').DataTable();
 });
 </script>
+{{-- @endsection --}}
 </body>
 
 </html>
