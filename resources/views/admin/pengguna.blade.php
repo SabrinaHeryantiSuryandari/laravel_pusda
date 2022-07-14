@@ -63,85 +63,95 @@
         </button>
       </div>
       <div class="modal-body">
-    @csrf 
-    @if (session()->has('message'))
-        <div class="alert alert-success">
-            {{ session()->get('message') }}
-        </div>
-    @endif
+        @csrf 
+        @if (session()->has('message'))
+            <div class="alert alert-success">
+                {{ session()->get('message') }}
+            </div>
+        @endif
 
-  <div class="card-header text-center">{{ __('Register') }}</div>
-  <br>
-  <form action="/save" method="POST" enctype="multipart/form-data">
-                          
-      @csrf
-      {{-- Nama --}}
-      <div class="row mb-3">
-        <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
-        
-        <div class="col-md-6">
-          <input id="name" type="text" name="name" class="form-control" value="{{ old('name') }}" required autocomplete="name" autofocus>
-            <br>
-          
-            @error('name')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
-        </div>
-      </div>
-      
-      {{-- Email --}}
-      <div class="row mb-3">
-        <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-        <div class="col-md-6">
-          <input id="email" type="text" name="email" class="form-control" value="{{ old('email') }}" required autocomplete="email">
-            <br>
-            @error('email')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
-        </div>
-      </div>
-
-      {{-- Password --}}
-      <div class="row mb-3">
-        <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-        <div class="col-md-6">
-          <input id="password" type="text" name="password" class="form-control" value="{{ old('password') }}" required autocomplete="new-password">
-            <br>
-            @error('password')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
-        </div>
-      </div>
-
-      {{-- Confirm Password --}}
-      <div class="row mb-3">
-          <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
-
-          <div class="col-md-6">
-              <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+      <div class="card-header text-center">{{ __('Register') }}</div>
+      <br>
+        <form action="/save" method="POST" enctype="multipart/form-data">
+                              
+          @csrf
+          {{-- Nama --}}
+          <div class="row mb-3">
+            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
+            
+            <div class="col-md-6">
+              <input id="name" type="text" name="name" class="form-control" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                <br>
+              
+                @error('name')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
           </div>
-      </div>
+          
+          {{-- Email --}}
+          <div class="row mb-3">
+            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
 
-      {{-- Register --}}
-      <div class="col-md-6 offset-md-4">
-          <button type="submit" class="btn btn-primary">
-              {{-- {{ __('Register') }} --}}
-              Register
-          </button>
-      </div>
+            <div class="col-md-6">
+              <input id="email" type="text" name="email" class="form-control" value="{{ old('email') }}" required autocomplete="email">
+                <br>
+                @error('email')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+          </div>
 
-      {{-- <button type="submit" class="btn btn-md btn-primary">SIMPAN</button>
-      <button type="reset" class="btn btn-md btn-warning">RESET</button> --}}
-  </form>
-      </div>
+          {{-- Password --}}
+          <div class="row mb-3">
+            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
+
+            <div class="col-md-6">
+              <input id="password" type="password" name="password" class="form-control" value="{{ old('password') }}" required autocomplete="new-password">
+                <br>
+                @error('password')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+          </div>
+
+          {{-- Confirm Password --}}
+          <div class="row mb-3">
+              <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
+
+              <div class="col-md-6">
+                  <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+              </div>
+          </div>
+
+          {{-- Register --}}
+          <div class="col-md-6 offset-md-4">
+              <button type="submit" class="btn btn-primary">
+                  {{-- {{ __('Register') }} --}}
+                  Register
+              </button>
+          </div>
+
+          {{-- <button type="submit" class="btn btn-md btn-primary">SIMPAN</button>
+          <button type="reset" class="btn btn-md btn-warning">RESET</button> --}}
+        </form>
+        {{-- <form action="{{ route('delete',$item->id) }}" method="POST">
+
+          {{-- <a class="btn btn-info" href="{{ route('asets.show',$data->id) }}">Detail</a>
+          <a class="btn btn-primary" href="{{ route('asets.edit',$data->id) }}">Edit</a> --}}
+
+          {{-- @csrf
+          @method('DELETE')
+          
+          <button type="submit" class="btn btn-danger">Delete</button>
+        </form>  --}}
+        </div>
 
     </div>
   </div>

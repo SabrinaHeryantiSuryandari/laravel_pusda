@@ -30,11 +30,7 @@ class RegisterController extends Controller
      * @var string
      */
     protected $redirectTo = RouteServiceProvider::HOME;
-    // public function index(){
-    //     // $data   = User::all();
-    //     // return view('admin/pengguna')->with('user', $data);
-    //     return
-    // }
+
     /**
      * Create a new controller instance.
      *

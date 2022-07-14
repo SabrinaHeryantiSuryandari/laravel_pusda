@@ -41,7 +41,7 @@ Route::get('/create', function () {
 Route::get('/tambah', function () {
     return view('admin.pemilik');
 });
-// Route::get('/pengguna', function () {
+// Route::get('/admin', function () {
 //     return view('admin.pengguna');
 // });
 // Route::get('/tamu', function () {
@@ -50,11 +50,13 @@ Route::get('/tambah', function () {
 
 Auth::routes();
 Auth::routes(['verify' => false]);
+// Auth::routes(['verify' => true]);
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/admin',[view::class, 'index']);
 Route::get('/masuk',[view::class, 'login']);
 Route::post('/save',[view::class, 'save']);
+Route::delete('/delete',[view::class, 'destroy']);
 
 Route::get('/guest',[GuestController::class, 'index'])->name('guest');
 

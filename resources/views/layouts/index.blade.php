@@ -337,10 +337,10 @@ href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"> --}
     <script src="{{ asset('template/js/sb-admin-2.min.js')}}"></script>
 
     <!-- Page level plugins -->
-    <script src="{{ asset('template/vendor/datatables/jquery.dataTables.min.js')}}"></script>
-    <script src="{{ asset('template/vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
+    {{-- <script src="{{ asset('template/vendor/datatables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{ asset('template/vendor/datatables/dataTables.bootstrap4.min.js')}}"></script> --}}
     <!-- Page level custom scripts -->
-    <script src="{{ asset('template/js/demo/datatables-demo.js')}}"></script>
+    {{-- <script src="{{ asset('template/js/demo/datatables-demo.js')}}"></script> --}}
 
     <!-- Page level plugins -->
     <script src="{{ asset('template/vendor/chart.js/Chart.min.js')}}"></script>
@@ -399,6 +399,9 @@ href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"> --}
             $('#example').DataTable();
         });
     </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
 {{-- @endsection --}}
 </body>
 

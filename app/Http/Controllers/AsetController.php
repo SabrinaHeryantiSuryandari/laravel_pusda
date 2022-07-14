@@ -16,7 +16,7 @@ class AsetController extends Controller
      */
     public function index()
     {
-        $asets = Aset::latest()->paginate(5);
+        $asets = Aset::all();
       
         return view('admin.laporan',compact('asets'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
