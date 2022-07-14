@@ -13,12 +13,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     {{-- <link href="{{ asset('template/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css"> --}}
 
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-    rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
     <!-- Custom styles for this template-->
     <link href="{{ asset('template/css/sb-admin-2.min.css')}}" rel="stylesheet">
-    
+
     <!-- Custom styles for this page -->
     <link href="{{ asset('template/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
 
@@ -42,11 +41,11 @@ href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"> --}
             {{-- import file bootstrap  --}}
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
                 integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-        
+
 </head>
 
 <body id="page-top">
-    
+
     <!-- Page Wrapper -->
     <div id="wrapper">
         <!-- Sidebar -->
@@ -57,7 +56,7 @@ href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"> --}
                     <img src="img/logo.png" alt="Image" width="110px" height="39px">
                 </div>
             </a>
-            
+
             <!-- Divider -->
             <hr class="sidebar-divider my-0" style="background-color: #53c6c3;">
             <!-- Nav Item - Dashboard -->
@@ -66,15 +65,15 @@ href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"> --}
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
                 </li>
-                
+
                 <!-- Divider -->
                 <hr class="sidebar-divider" style="background-color: #53c6c3;">
-                
+
                 <!-- Heading -->
                 <div class="sidebar-heading text-gray-50 ">
                     Data Aset Tanah
                 </div>
-                
+
                 <!-- Nav Item - Pages Collapse Menu -->
                 {{-- <li class="nav-item @yield('input-data')">
                 <li class="nav-item collapsed"> --}}
@@ -118,15 +117,15 @@ href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"> --}
                         <span>Laporan Data</span>
                     </a>
                 </li>
-                
+
                 <!-- Divider -->
                 <hr class="sidebar-divider" style="background-color: #53c6c3;">
-                
+
                 <!-- Heading -->
                 <div class="sidebar-heading text-gray-50">
                     Pengaturan
                 </div>
-                
+
                 <!-- Nav Item - Pages Collapse Menu -->
                 <li class="nav-item active">
                     {{-- <a class="nav-link collapsed text-dark" href="/admin"> --}}
@@ -135,17 +134,17 @@ href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"> --}
                         <span>Pengguna</span>
                     </a>
                 </li>
-                
+
                 <!-- Divider -->
                 <hr class="sidebar-divider" style="background-color: #53c6c3;">
-                
+
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle" style="background-color: #52a4a1;"></button>
             </div>
-            
+
             <!-- Sidebar Message -->
-            
+
         </ul>
         <!-- End of Sidebar -->
 
@@ -154,7 +153,7 @@ href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"> --}
 
             <!-- Main Content -->
             <div id="content">
-                
+
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow"
                     style="background-color: #2F8F9D;">
@@ -163,7 +162,7 @@ href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"> --}
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
-                    
+
                     <div class="col-lg-6 mt-3">
                         <span style="color : #B3E8E5;">
                             Pusat Informasi Inventarisasi Aset Tanah
@@ -172,11 +171,11 @@ href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"> --}
                             Provinsi Jawa Timur
                         </p>
                     </div>
-                    
+
                     <!-- Topbar Search -->
                     <div class="container row">
                         <div class="col-lg-12 nav justify-content-end">
-                            
+
                             <div class="col-lg-6">
                                 <div class="input-group">
                                     <input type="text" class="form-control bg-light border-0 small "
@@ -191,7 +190,7 @@ href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"> --}
                         </div>
                     </div>
                     <!-- Topbar search -->
-                    
+
                     <!-- Topbar Navbar -->
                     {{-- <ul class="navbar-nav ml-auto">
                         <!-- Nav Item - User Information -->
@@ -224,7 +223,7 @@ href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"> --}
                                 </a>
                             </div>
                         </li>
-                        
+
                     </ul>  --}}
 
                     <ul class="navbar-nav ms-auto">
@@ -245,7 +244,7 @@ href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"> --}
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     <span class="mr-2 d-none d-lg-inline text-white small">{{ Auth::user()->name }}</span>
-                                    
+
                                     <img class="img-profile rounded-circle"
                             src="{{ asset('template/img/undraw_profile.svg')}}">
                                 </a>
@@ -264,7 +263,7 @@ href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"> --}
                             </li>
                         @endguest
                     </ul>
-                    
+
                 </nav>
                 <!-- End of Topbar -->
 
@@ -277,19 +276,19 @@ href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"> --}
                         <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                             class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
                     </div>
-                        
+
                         {{-- isi --}}
                         @yield('content')
-                        
+
                     </div>
                     <!-- /.container-fluid -->
-                    
+
                 </div>
                 <!-- End of Main Content -->
-                
+
                 <!-- Footer -->
                 {{-- <nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow"> --}}
-                    
+
                     <footer class="sticky-footer" style="background-color: #2F8F9D;">
                         <div class="container my-auto">
                             <div class="copyright text-center my-auto">
@@ -336,13 +335,13 @@ href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"> --}
 
     <!-- Custom scripts for all pages-->
     <script src="{{ asset('template/js/sb-admin-2.min.js')}}"></script>
-    
+
     <!-- Page level plugins -->
     <script src="{{ asset('template/vendor/datatables/jquery.dataTables.min.js')}}"></script>
     <script src="{{ asset('template/vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
     <!-- Page level custom scripts -->
     <script src="{{ asset('template/js/demo/datatables-demo.js')}}"></script>
-    
+
     <!-- Page level plugins -->
     <script src="{{ asset('template/vendor/chart.js/Chart.min.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" integrity="sha512-yFjZbTYRCJodnuyGlsKamNE/LlEaEAxSUDe5+u61mV8zzqJVFOH7TnULE2/PP/l5vKWpUNnF4VGVkXh3MjgLsg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -383,49 +382,23 @@ href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"> --}
             }
         });
         </script>
+    <script>
+        //message with toastr
+        @if(session()->has('success'))
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        toastr.success('{{ session('success') }}', 'BERHASIL!');
 
-<script>
-    //message with toastr
-    @if(session()->has('success'))
-    
-    toastr.success('{{ session('success') }}', 'BERHASIL!'); 
-    
-    @elseif(session()->has('error'))
-    
-    toastr.error('{{ session('error') }}', 'GAGAL!'); 
-    
-    @endif
-</script>
+        @elseif(session()->has('error'))
 
-<script
-src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-crossorigin="anonymous"></script>
-{{-- input data --}}
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
-<script
-src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-crossorigin="anonymous"></script>
-<script
-src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-crossorigin="anonymous"></script>
-<script
-type="text/javascript"
-src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-<script
-type="text/javascript"
-src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
-<script>
-$(document).ready(function () {
-$('#example').DataTable();
-});
-</script>
+        toastr.error('{{ session('error') }}', 'GAGAL!');
+
+        @endif
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+    </script>
 {{-- @endsection --}}
 </body>
 
