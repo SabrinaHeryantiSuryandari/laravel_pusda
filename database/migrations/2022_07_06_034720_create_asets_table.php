@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('kondisi_aset');
             $table->string('kondisi_geografis');
             $table->string('asalusul_aset');
-            $table->string('th_kepemilikam');
+            $table->string('th_kepemilikan');
             $table->string('th_pembangunan');
             $table->string('th_rehab');
             $table->string('keterangan_aset');
