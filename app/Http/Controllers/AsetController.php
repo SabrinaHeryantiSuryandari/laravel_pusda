@@ -43,7 +43,7 @@ class AsetController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'id' => 'required',
+            // 'id' => 'required',
             'no_sertifikat' => 'required',
             'nama_aset' => 'required',
             'alamat_aset' => 'required',
