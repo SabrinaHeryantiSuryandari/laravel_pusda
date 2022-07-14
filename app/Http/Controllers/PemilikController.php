@@ -39,7 +39,7 @@ class PemilikController extends Controller
         // $pemilik -> id = $request -> id;
         $pemilik -> nama = $request -> nama;
         $pemilik -> keterangan = $request -> keterangan;
-        $pemilik -> aset_id = $request -> aset_id;
+        // $pemilik -> aset_id = $request -> aset_id;
         // $pemilik -> aset_id = AsetController::class, id;;
         $pemilik -> no_sertifikat = $request -> no_sertifikat;
         $pemilik -> nama_aset = $request -> nama_aset;
