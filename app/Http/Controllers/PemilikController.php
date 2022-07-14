@@ -35,28 +35,10 @@ class PemilikController extends Controller
 
     public function store(Request $request)
     {
-        $pemilik = new Pemilik();
-        // $pemilik -> id = $request -> id;
-        $pemilik -> nama = $request -> nama;
-        $pemilik -> keterangan = $request -> keterangan;
-        // $pemilik -> aset_id = $request -> aset_id;
-        // $pemilik -> aset_id = AsetController::class, id;;
-        $pemilik -> no_sertifikat = $request -> no_sertifikat;
-        $pemilik -> nama_aset = $request -> nama_aset;
-        $pemilik -> alamat_aset = $request -> alamat_aset;
-        $pemilik -> luas_aset = $request -> luas_aset;
-        $pemilik -> status_aset = $request -> status_aset;
-        $pemilik -> kondisi_aset = $request -> kondisi_aset;
-        $pemilik -> kondisi_geografis = $request -> kondisi_geografis;
-        $pemilik -> asalusul_aset = $request -> asalusul_aset;
-        $pemilik -> th_kepemilikan = $request -> th_kepemilikan;
-        $pemilik -> th_pembangunan = $request -> th_pembangunan;
-        $pemilik -> th_rehab = $request -> th_rehab;
-        $pemilik -> keterangan_aset = $request -> keterangan_aset;
+        $asets = Aset::create($request->except(['nama', 'keterangan']));
 
-        // $pesmilik ->save();
-        $asets = Aset::create($request->except(['aset_id', 'nama', 'keterangan']));
-        $pemilik = Pemilik::create(['aset_id' => $asets->id, $request->only(['aset_id', 'nama', 'keterangan'])]);
+        $request['aset_id'] = $asets->id;
+        $pemilik = Pemilik::create($request->only(['aset_id', 'nama', 'keterangan']));
 
         // return redirect('/');
         return back()->with('success',' Post baru berhasil dibuat.');
