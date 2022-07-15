@@ -18,16 +18,18 @@
                   <h5 class="card-title">{{ $item->name }}</h5>
                   <p class="card-text">{{ ($item->email) }}</p>
                   {{-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
-                  {{-- <form action="{{ route('delete',$item->id) }}" method="POST"> --}}
+                  <form action="{{ route('delete.destroy',$item->id) }}" method="POST">
             
                     {{-- <a class="btn btn-info" href="{{ route('asets.show',$item->id) }}">Detail</a> --}}
                     {{-- <a class="btn btn-primary" href="{{ route('asets.edit',$item->id) }}">Edit</a> --}}
-{{--             
+            
                                 @csrf
                                 @method('DELETE')
-                
                                 <a type="submit" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></a>
-                            </form> --}}
+                                {{-- {{viuw::hidden('_method', 'DELETE')}} --}}
+                                {{-- <input type="hidden" value="DELETE" name="_method">
+                                <input type="submit" value="Delete" class="btn btn-danger btn-sm"> --}}
+                              </form>
                             
                             {{-- <a href="{{route('pengguna.destroy', ['id' => $data->id])}}" onclick="return confirm('Weet je dit zeker?')">
                               <i class="fa fa-trash"></i>

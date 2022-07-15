@@ -11,7 +11,7 @@ class view extends Controller
 {
     public function index()
     {
-        return view('index.admin');
+        return view('index/admin');
     }
 
     public function login()
@@ -48,6 +48,7 @@ class view extends Controller
     }
     public function destroy(User $data)
     {
+        // $data= User::findOrFail('id');
         $data->delete();
        
         return redirect()->route('pengguna')

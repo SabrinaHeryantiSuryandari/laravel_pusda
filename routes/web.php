@@ -31,7 +31,7 @@ Route::get('/admin', function () {
 // CRUD
 // route untuk input data yg telah terverifikasi
 Route::get('/verified-create', function () {
-    return view('create');
+    return view('admin.editpemilik');
 });
 
 // route untuk input data yg belum terverifikasi
@@ -41,8 +41,8 @@ Route::get('/create', function () {
 Route::get('/tambah', function () {
     return view('admin.pemilik');
 });
-// Route::get('/admin', function () {
-//     return view('admin.pengguna');
+// Route::get('/editpemilik', function () {
+//     return view('admin.editpemilik');
 // });
 // Route::get('/tamu', function () {
 //     return view('tamu');
@@ -56,7 +56,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/admin',[view::class, 'index']);
 Route::get('/masuk',[view::class, 'login']);
 Route::post('/save',[view::class, 'save']);
-Route::delete('/delete',[view::class, 'destroy']);
+// Route::delete('/delete',[view::class, 'delete']);
 
 Route::get('/guest',[GuestController::class, 'index'])->name('guest');
 
@@ -66,6 +66,7 @@ Route::get('/pengguna',[view::class, 'pengguna']);
 
 //tambahkan kode berikut
 Route::resource('/asets', AsetController::class);
+Route::resource('/delete', view::class);
 
 Route::resource('/pemilik', PemilikController::class);
 // Route::resource('/pengguna', View::class);

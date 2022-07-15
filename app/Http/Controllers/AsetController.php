@@ -17,6 +17,7 @@ class AsetController extends Controller
     public function index()
     {
         $asets = Aset::all();
+        $pemiliks = Pemilik::all();
       
         return view('admin.laporan',compact('asets'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
@@ -63,7 +64,7 @@ class AsetController extends Controller
         // $pemilik = Pemilik::create(['aset_id' => $asets->id, $request->only(['nama', 'keterangan', 'aset_id'])]);
 
         return redirect()->route('asets.index')
-                        ->with('success','Aset created successfully.');
+                        ->with('success','Aset Berhasil Disimpan!');
     }
 
     /**
@@ -115,7 +116,7 @@ class AsetController extends Controller
         $aset->update($request->all());
       
         return redirect()->route('asets.index')
-                        ->with('success','Aset updated successfully');
+                        ->with('success','Aset Berhasil updated!');
     
     }
 
@@ -130,7 +131,7 @@ class AsetController extends Controller
         $aset->delete();
        
         return redirect()->route('asets.index')
-                        ->with('success','Aset deleted successfully');
+                        ->with('success','Aset Berhasil Dihapus!');
     
     }
 }

@@ -11,7 +11,6 @@ class aset extends Model
     use HasFactory;
 
     protected $fillable = [
-        // 'name', 'kelas' ,
         // 'id',
             'no_sertifikat',
             'nama_aset',
@@ -33,7 +32,6 @@ class aset extends Model
  
     public function pemilik()
     {
-    	// return $this->hasOne(pemilik::class, 'foreign_key');
     	return $this->hasOne(pemilik::class);
     }
 }

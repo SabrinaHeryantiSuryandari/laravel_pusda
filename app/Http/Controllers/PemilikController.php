@@ -16,13 +16,16 @@ class PemilikController extends Controller
     	// mengambil semua data pengguna
     	// $pemilik = Pemilik::all();
         $asets = aset::all();
+
         $pemilik = Pemilik::with('aset')->paginate(2);
     	// return data ke view
-    	return view('pemilik', 
-        // ['pemilik' => $pemilik]
-        compact('pemilik')
-    );
+    	return view('pemilik', compact('pemilik')
+        );
+    }
 
+    public function show(Pemilik $pemilik)
+    {
+        return view('admin.show',compact('pemilik'));
     }
 
     public function create(){
@@ -38,9 +41,8 @@ class PemilikController extends Controller
         $asets = Aset::create($request->except(['nama', 'keterangan']));
 
         $request['aset_id'] = $asets->id;
-        // $pemilik = Pemilik::create($request->only(['aset_id', 'nama', 'keterangan']));
+        $pemilik = Pemilik::create($request->only(['aset_id', 'nama', 'keterangan']));
 
-        // return redirect('/');
         return back()->with('success',' Post baru berhasil dibuat.');
     }
 }
